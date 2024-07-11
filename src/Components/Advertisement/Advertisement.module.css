@@ -1,0 +1,46 @@
+/* Advertisement.module.css */
+
+@keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .advertisementContainer {
+    overflow: hidden;
+    position: relative;
+    padding-left: 20px; /* Left padding */
+    padding-right: 20px; /* Right padding */
+  }
+  
+  .animateSlide {
+    display: flex;
+    animation: scroll 25s linear infinite;
+  }
+  
+  .animateSlide > div {
+    display: flex;
+    gap: 3rem; /* Adjust spacing between items */
+  }
+  
+  .advertisementItem {
+    display: flex;
+    align-items: center; /* Center align content vertically */
+    flex: 0 0 auto; /* Ensure items do not grow beyond their content */    
+  }
+  
+  .advertisementItem span {
+    margin-right: 1rem; /* Adjust gap between '+' and text */
+  }
+  
+  @media (max-width: 768px) {
+    .animateSlide > div {
+      gap: 4rem; /* Adjust spacing for smaller screens */
+    }
+  }
