@@ -14,7 +14,7 @@ app.post('/login', (req, res) => {
     EmployeeModel.findOne({ email: email })
         .then(user => {
             if (user) {
-                if (user, password === password) {
+                if (user.password === password) {
                     res.json('success')
                 } else {
                     res.json('the password is incorrect')

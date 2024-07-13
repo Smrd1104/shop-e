@@ -5,6 +5,7 @@ import axios from 'axios';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -14,6 +15,7 @@ const Login = () => {
             .then(result => {
                 console.log(result);
                 if (result.data === 'success') {
+                    localStorage.setItem('isAuthenticated', true);
                     navigate('/');
                 }
 
@@ -30,7 +32,7 @@ const Login = () => {
             <div className="absolute w-[700px] h-[700px] bg-gradient-to-r from-primary to-secondary/40 rounded-3xl dark:bg-black rotate-45 top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2"></div>
             <div className='flex flex-col gap-5 '>
                 <div className='relative z-10'>
-                    <a  className=" font-bold text-[#020b38d3] dark:text-white text-2xl sm:text-3xl justify-center flex items-center gap-2">
+                    <a className=" font-bold text-[#020b38d3] dark:text-white text-2xl sm:text-3xl justify-center flex items-center gap-2">
                         <img src={Logo} alt="logo" className="w-10" />
                         Shop <span className="text-[#000000d3]">-</span><span className="text-[#ff0505d3] font-extrabold">e</span>
                     </a>
@@ -63,9 +65,10 @@ const Login = () => {
                         >
                             Login
                         </button>
-                        <div className='py-2'>
-                            <h3>Create New account?</h3>
+                        <div className='pt-4'>
+
                             <Link to='/sign-up'>
+                                <h3 className='pb-4 hover:text-red-500 hover:underline'>Create New account?</h3>
                                 <button
                                     type="submit"
                                     className="w-full bg-primary text-white p-3 rounded-lg"

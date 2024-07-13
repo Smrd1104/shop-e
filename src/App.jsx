@@ -24,6 +24,7 @@ import Table from "./Components/Table/Table";
 
 const App = () => {
 
+
   const [orderPopup, setOrderPopup] = React.useState(false);
 
   const handleOrderPopup = () => {
@@ -41,8 +42,10 @@ const App = () => {
   return (
     <div>
     <Routes>
+   
     <Route path="/login" element={<Login/>}/>
     <Route path="/sign-up" element={<Signup/>}/>
+   
       <Route path='/' element={<RouteLayouts/>} >
       <Route index element={<Home/>}/>
      
