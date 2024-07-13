@@ -34,7 +34,7 @@ const Login = () => {
     };
 
     return (
-        <div className="relative flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 overflow-hidden">
+        <div className="relative py-14 flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 overflow-hidden">
             <div className="absolute inset-0 z-0 w-full h-full bg-gradient-to-r from-primary to-secondary/40 dark:bg-black"></div>
             <div className="absolute w-[700px] h-[700px] bg-gradient-to-r from-primary to-secondary/40 rounded-3xl dark:bg-black rotate-45 top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2"></div>
             <div className='flex flex-col gap-5 '>
@@ -84,13 +84,14 @@ const Login = () => {
                         <div className='pt-4'>
                             <Link to='/sign-up'>
                                 <h3 className='pb-4 hover:text-red-500 hover:underline'>Create New account?</h3>
+
+                                <button
+                                    type="submit"
+                                    className="w-full bg-primary text-white p-3 rounded-lg"
+                                >
+                                    Signup
+                                </button>
                             </Link>
-                            <button
-                                type="submit"
-                                className="w-full bg-primary text-white p-3 rounded-lg"
-                            >
-                                Signup
-                            </button>
                         </div>
                     </form>
                 </div>

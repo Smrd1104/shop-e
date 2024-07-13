@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../../assets/footer-bg.jpg";
 import FooterLogo from "../../assets/logo.png";
 import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
@@ -25,7 +26,7 @@ const FooterLinks = [
   },
   {
     title: "Contact",
-    link: "/#",
+    link: "/contact",
   },
   {
     title: "Blog",
@@ -71,15 +72,16 @@ const Footer = () => {
             <div>
               <div className="py-8 px-4">
                 <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3">
-                   Links
+                  Links
                 </h1>
                 <ul className="flex flex-col gap-3">
                   {FooterLinks.map((link) => (
                     <li
                       key={link?.id}
                       className=" cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                    >
-                      <span>{link?.title}</span>
+                    ><Link to={link?.link}>
+                        <span>{link?.title}</span>
+                      </Link>
                     </li>
                   ))}
                 </ul>

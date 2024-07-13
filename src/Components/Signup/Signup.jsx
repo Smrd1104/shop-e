@@ -46,7 +46,7 @@ const Signup = () => {
   }
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 overflow-hidden">
+    <div className="relative py-14 flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 overflow-hidden">
       <div className="absolute inset-0 z-0 w-full h-full bg-gradient-to-r from-primary to-secondary/40"></div>
       <div className="absolute w-[700px] h-[700px] bg-gradient-to-r from-primary to-secondary/40 rounded-3xl rotate-45 top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2"></div>
       <div className='flex flex-col gap-5'>
@@ -81,7 +81,7 @@ const Signup = () => {
               />
               <FontAwesomeIcon
                 icon={showPassword ? faEyeSlash : faEye}
-                className="absolute lg:right-10 right-3 top-12 cursor-pointer text-gray-500"
+                className="absolute lg:right-10 right-3 top-12 cursor-pointer text-gray-700"
                 onClick={() => setShowPassword(!showPassword)}
               />
             </div>
@@ -96,7 +96,7 @@ const Signup = () => {
               />
               <FontAwesomeIcon
                 icon={showConfirmPassword ? faEyeSlash : faEye}
-                className="absolute lg:right-10 right-3 top-12 cursor-pointer text-gray-500"
+                className="absolute lg:right-10 right-3 top-12 cursor-pointer text-gray-700"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               />
             </div>

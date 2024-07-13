@@ -21,6 +21,7 @@ import Home from "./Pages/Home";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
 import Table from "./Components/Table/Table";
+import Contact from "./Pages/Contact";
 
 const App = () => {
 
@@ -48,7 +49,7 @@ const App = () => {
    
       <Route path='/' element={<RouteLayouts/>} >
       <Route index element={<Home/>}/>
-     
+      <Route path="/contact" element={<Contact/>}/>
       <Route path="/table" element={<Table/>}/>
       </Route>
     </Routes>
