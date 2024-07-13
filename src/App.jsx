@@ -41,10 +41,11 @@ const App = () => {
   return (
     <div>
     <Routes>
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/sign-up" element={<Signup/>}/>
       <Route path='/' element={<RouteLayouts/>} >
       <Route index element={<Home/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/sign-up" element={<Signup/>}/>
+     
       <Route path="/table" element={<Table/>}/>
       </Route>
     </Routes>
