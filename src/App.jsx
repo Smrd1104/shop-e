@@ -12,8 +12,6 @@ import Footer from "./Components/Footer/Footer";
 import Popup from "./Components/Popup/Popup";
 import Advertisement from "./Components/Advertisement/Advertisement";
 import ScrollToTopButton from "./Components/ScrollToTopButton/ScrollToTopButton";
-import Atropos from "atropos";
-import 'atropos/css'
 import Loader from "./Components/Loader/Loader";
 import { Route, Routes } from "react-router-dom";
 import RouteLayouts from "./Layout/RouteLayouts";
