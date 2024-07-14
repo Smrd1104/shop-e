@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "ecomm-shop-e",
+    "shop": "ecomm-shop-e"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
