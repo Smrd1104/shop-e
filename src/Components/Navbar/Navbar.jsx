@@ -57,7 +57,7 @@ const DropdownLinks = [
 const Navbar = ({ handleLogout, handleOrderPopup }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -82,11 +82,11 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
     navigate('/login')
     console.log('isAuthenticated: ', isAuthenticated);
     setDropdownOpen(false);
-   
+
   };
 
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
- 
+
   console.log('isAuthenticated: ', isAuthenticated);
 
   return (
@@ -100,8 +100,8 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               className="font-bold text-[#020b38d3] dark:text-white text-2xl sm:text-3xl flex gap-2"
             >
               <img src={Logo} alt="logo" className="w-10" />
-              Shop <span className="text-[#000000d3]">-</span>
-              <span className="text-[#ff0505d3] font-extrabold">e</span>
+                Shop <span className="text-[#000000d3]">-</span>
+                <span className="text-[#ff0505d3] font-extrabold">e</span>
             </a>
           </div>
           {/* searchbar */}
@@ -115,15 +115,17 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             {/* order button */}
-            <button
-              onClick={() => handleOrderPopup()}
-              className="bg-primary dark:border-gray-500 dark:bg-gray-800 transition-all duration-300 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
-            >
-              <span className="group-hover:block hidden transition-all duration-300">
-                Order
-              </span>
-              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-            </button>
+            <Link to='/cart'>
+              <button
+                onClick={() => handleOrderPopup()}
+                className="bg-primary dark:border-gray-500 dark:bg-gray-800 transition-all duration-300 text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+              >
+                <span className="group-hover:block hidden transition-all duration-300">
+                  Cart
+                </span>
+                <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+              </button>
+            </Link>
             {/* profile icons */}
             <div className="relative" ref={dropdownRef}>
               <button
