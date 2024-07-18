@@ -48,7 +48,7 @@ const Cart = () => {
                         value={item.quantity}
                         min="1"
                         onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                        className="w-10 p-1 border rounded"
+                        className="w-12 p-1 border rounded"
                       />
                     </td>
                     <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
