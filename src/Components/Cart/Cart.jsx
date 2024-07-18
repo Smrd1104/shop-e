@@ -48,7 +48,7 @@ const Cart = () => {
                         value={item.quantity}
                         min="1"
                         onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                        className="w-16 p-1 border rounded"
+                        className="w-10 p-1 border rounded"
                       />
                     </td>
                     <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
@@ -56,7 +56,7 @@ const Cart = () => {
                     <td className="py-2 text-center">
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="bg-red-500 text-white py-1 px-2 rounded"
+                        className="bg-red-500 text-sm text-white py-1 px-2 rounded"
                       >
                         Remove
                       </button>
