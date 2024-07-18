@@ -34,7 +34,7 @@ const Cart = () => {
               <tbody>
                 {cart.map((item) => (
                   <tr key={item.id} className="border-t">
-                    <td className="py-2 flex items-center">
+                    <td className="py-2 flex lg:flex-row lg:justify-start justify-center flex-col">
                       <img src={item.img} alt={item.title} className="w-12 h-12 mr-4" />
                       <div>
                         <h3 className="font-medium">{item.title}</h3>
@@ -48,7 +48,7 @@ const Cart = () => {
                         value={item.quantity}
                         min="1"
                         onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                        className="w-12 p-1 border rounded"
+                        className="w-16 p-1 border rounded"
                       />
                     </td>
                     <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
@@ -56,7 +56,7 @@ const Cart = () => {
                     <td className="py-2 text-center">
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="bg-red-500 text-sm text-white py-1 px-2 rounded"
+                        className="bg-red-500 text-sm text-white py-1 px-1 rounded"
                       >
                         Remove
                       </button>
