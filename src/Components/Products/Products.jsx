@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import image1 from "../../assets/hero/hero-image1.png";
-import image2 from "../../assets/hero/image2.jpg";
-import image3 from "../../assets/hero/image3.jpg";
-import image4 from "../../assets/hero/image2.jpg";
-import image5 from "../../assets/hero/image4.jpg";
+import image2 from "../../assets/vkc/shoe.jpg";
+import image3 from "../../assets/vkc/boots.jpg";
+import image4 from "../../assets/vkc/formals.jpg";
+import image5 from "../../assets/vkc/casuals.jpg";
 import { FaStar } from "react-icons/fa6";
 import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
