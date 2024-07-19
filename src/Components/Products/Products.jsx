@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import image1 from "../../assets/hero/hero-image1.png";
+import image1 from "../../assets/vkc/womens-hills (2).png";
 import image2 from "../../assets/vkc/shoe.jpg";
 import image3 from "../../assets/vkc/boots.jpg";
 import image4 from "../../assets/vkc/formals.jpg";

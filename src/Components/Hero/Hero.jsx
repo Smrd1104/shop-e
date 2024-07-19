@@ -1,35 +1,59 @@
 import React from "react";
 import image1 from "../../assets/vkc/png-1.png";
 import image2 from "../../assets/vkc/png-2.png";
-import image3 from "../../assets/hero/hero-image3.png";
+import image3 from "../../assets/vkc/womens-hills (1).png";
+import image4 from "../../assets/vkc/hand-bag (2).png";
+import image5 from "../../assets/vkc/t-shirt (3).png";
+import image6 from "../../assets/hero/hero-image3.png";
+
 import Slider from "react-slick";
 
 const ImageList = [
   {
     id: 1,
     img: image1,
-    title: "Upto 50% off on all Men's Wear",
+    title: "Upto 50% off on all Men's Sandals",
     description:
       "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: 2,
     img: image2,
-    title: "Upto 70% off on all Women's Wear",
+    title: "Upto 70% off on all Women's Slipper",
     description:
       "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: 3,
     img: image3,
-    title: "Upto 30% off on all Men's Wear",
+    title: "Upto 80% off on all Women's Hills",
+    description:
+      "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 4,
+    img: image4,
+    title: "Upto 50% off on all Women's Hand Bags",
+    description:
+      "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 5,
+    img: image5,
+    title: "Upto 60% off on all Men's t-shirts",
+    description:
+      "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },{
+    id: 6,
+    img: image6,
+    title: "More offers on all Products",
     description:
       "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 const Hero = () => {
   var settings = {
-    dots: false,
+    dots: true,
     arrows: false,
     Infinite: true,
     speed: 800,
