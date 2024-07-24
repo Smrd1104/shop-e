@@ -1,6 +1,6 @@
 import React from "react";
 import img1 from "../../assets/shirt/shirt-1 (1).png";
-import img2 from "../../assets/shirt/shirt-1 (4).png";
+import img2 from "../../assets/vkc/t-shirt (8).png";
 import img3 from "../../assets/shirt/shirt-1 (5).png";
 import { FaStar } from "react-icons/fa6";
 
@@ -14,13 +14,13 @@ const ProductsData = [
   {
     id: 2,
     img: img2,
-    title: "Printed t-shirt",
+    title: "T-shirt ",
     description: "The products of mens wear is comfortable to wear in summer",
   },
   {
     id: 3,
     img: img3,
-    title: "Womens Wear",
+    title: "Mens Wear",
     description: "The products of mens wear is comfortable to wear in summer",
   },
 ];
