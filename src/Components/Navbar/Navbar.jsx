@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "../../assets/shop-e-png.png";
+import Logo from "../../assets/new-logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
@@ -13,6 +13,7 @@ const Menu = [
     id: 1,
     name: "Home",
     link: "#",
+
   },
   {
     id: 2,
@@ -90,16 +91,16 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
   console.log('isAuthenticated: ', isAuthenticated);
 
   return (
-    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="shadow-md bg-white   dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
-      <div className="fixed z-[9999] top-0 left-0 right-0 bg-gradient-to-r from-primary to-secondary ">
+      <div className="fixed z-[9999] top-0 left-0 right-0 bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/50 backdrop-blur-md ">
         <div className="container flex justify-between items-center">
           <div>
             <a
               href="#"
               className="font-bold text-[#020b38d3] dark:text-white text-2xl sm:text-3xl flex gap-2"
             >
-              <img src={Logo} alt="logo" className="w-24" />
+              <img src={Logo} alt="logo" className="w-14" />
                 {/* Shop <span className="text-[#000000d3]">-</span>
                 <span className="text-[#ff0505d3] font-extrabold">e</span> */}
             </a>
@@ -110,7 +111,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               <input
                 type="text"
                 placeholder="Search"
-                className="md:w-[150px]  group-hover:w-[800px]  group-hover:bg-gray-100 bg-[#ffe11b] transition-all duration-700 rounded-full  border-gray-400 px-2 py-1 focus:outline-none focus:border-1  focus:border-[] dark:border-[#ffe11b] dark:bg-gray-800"
+                className="md:w-[150px]  group-hover:w-[800px]  group-hover:bg-gray-100  transition-all duration-700 rounded-full  border-gray-400 px-2 py-1 focus:outline-none focus:border-1  focus:border-[] dark:border-[#ffe11b] dark:bg-gray-800"
               />
               <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-black    absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
@@ -174,7 +175,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
         </div>
       </div>
       {/* lower Navbar */}
-      <div data-aos="zoom-in" className="flex mt-24 justify-center">
+      <div className="flex mt-14 justify-center bg-gray-100 dark:text-white dark:bg-black">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
