@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "ecomm-shop-e",
-    "shop": "ecomm-shop-e"
+    "shop": "ecomm-shop-e",
+    "y": "web-shop-e"
   },
   "targets": {},
   "etags": {},
