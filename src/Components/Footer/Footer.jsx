@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "../../assets/footer-bg.jpg";
-import FooterLogo from "../../assets/logo.png";
+import FooterLogo from "../../assets/new-logo.png";
 import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -39,16 +39,17 @@ const FooterLinks = [
 ];
 const Footer = () => {
   return (
-    <div style={BannerImg} className="text-white ">
+    <div  className="text-white bg-black/70 overflow-hidden">
+      {/* style={BannerImg} */}
       <div className="container">
-        <div data-aos='zoom-in' className="grid md:grid-cols-3 pb-44 pt-5">
+        <div data-aos='zoom-in' className="grid md:grid-cols-3 items-center pt-5">
           {/* company details */}
-          <div className="py-8 px-4">
+          <div className="py-8 px-4 -mt-10">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3 ">
-              <img src={FooterLogo} alt="" className="max-w-[50px]" />
-              Shop-e
+              <img src={FooterLogo} alt="" className="max-w-[250px]" />
+             
             </h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in beatae ea recusandae blanditiis veritatis.</p>
+            <p className="-mt-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in beatae ea recusandae blanditiis veritatis.</p>
           </div>
           {/* footer links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10">
