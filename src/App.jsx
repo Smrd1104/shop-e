@@ -47,7 +47,7 @@ const App = () => {
       setLoading(false);
       // navigate('/'); // Navigate to home page after loading completes
 
-    }, 3000); // Adjust the timeout to simulate loading time
+    }, 1000); // Adjust the timeout to simulate loading time
   }, []);
 
   return (
