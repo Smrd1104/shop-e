@@ -53,7 +53,7 @@ const Login = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 type="email"
                                 id="email"
-                                className="w-full lg:py-3 lg:pl-2 p-3 bg-white/20 text-white focus:outline-none rounded-lg dark:bg-gray-700 dark:text-gray-300"
+                                className="w-full lg:py-3 lg:pl-2 p-3 bg-white/20 text-gray-700 focus:outline-none rounded-lg dark:bg-gray-700 dark:text-gray-300"
                             />
                         </div>
                         <div className="mb-4">

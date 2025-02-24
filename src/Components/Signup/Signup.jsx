@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Signup = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -28,7 +29,7 @@ const Signup = () => {
       return;
     }
 
-    axios.post('http://localhost:3001/register', { email, password })
+    axios.post('http://localhost:3001/register', { name, email, password })
       .then(result => {
         console.log(result);
         localStorage.setItem('isAuthenticated', true);
@@ -38,7 +39,7 @@ const Signup = () => {
         console.log(err);
         setError("An error occurred. Please try again.");
       });
-  }
+  };
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -60,6 +61,16 @@ const Signup = () => {
           <h2 className="text-2xl font-bold mb-6 text-center text-gray-700 dark:text-gray-200">Signup</h2>
           {error && <p className="mb-4 text-red-500 text-center">{error}</p>}
           <form onSubmit={handleSubmit} className=''>
+            <div className="mb-4 relative">
+              <label className="block text-gray-700 dark:text-gray-300 mb-2" htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                className="w-full lg:py-3 lg:pl-2 p-3 shadow-lg text-gray-700 rounded-lg bg-white/20 dark:bg-gray-700 focus:outline-none dark:text-gray-300"
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
             <div className="mb-4 relative">
               <label className="block text-gray-700 dark:text-gray-300 mb-2" htmlFor="email">Email</label>
               <input
