@@ -159,7 +159,7 @@ const Products = () => {
               <div
                 data-aos="fade-up"
                 data-aos-delay={data?.aosDelay}
-                className="space-y-3 bg-white  rounded-lg"
+                className="space-y-3 dark:bg-gray-800 bg-white  rounded-lg"
               >
                 <img
                   src={data?.img}
