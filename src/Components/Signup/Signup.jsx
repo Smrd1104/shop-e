@@ -57,7 +57,7 @@ const Signup = () => {
             {/* Shop <span className="text-[#000000d3]">-</span><span className="text-[#ff0505d3] font-extrabold">e</span> */}
           </a>
         </div>
-        <div className="relative w-full z-10 bg-white/20  px-10 py-6 dark:bg-gray-800  rounded-lg shadow-lg lg:w-[500px]">
+        <div className="relative w-full z-10 bg-white/30 backdrop-blur-3xl  px-10 py-6 dark:bg-gray-800  rounded-lg shadow-lg lg:w-[500px]">
           <h2 className="text-2xl font-bold mb-6 text-center text-gray-700 dark:text-gray-200">Signup</h2>
           {error && <p className="mb-4 text-red-500 text-center">{error}</p>}
           <form onSubmit={handleSubmit} className=''>

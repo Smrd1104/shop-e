@@ -14,14 +14,14 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart container mx-auto p-6">
+    <div className="cart container mx-auto p-6 ">
       <h2 className="text-center py-10 text-3xl font-semibold">Cart</h2>
       {cart.length === 0 ? (
         <p className="text-center text-lg">No items in cart.</p>
       ) : (
         <>
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border-collapse">
+          <div className="overflow-x-auto ">
+            <table className="min-w-full bg-white border-collapse dark:text-white dark:bg-gray-900">
               <thead>
                 <tr className="border-b">
                   <th className="py-2 text-left">Product</th>
@@ -33,7 +33,7 @@ const Cart = () => {
               </thead>
               <tbody>
                 {cart.map((item) => (
-                  <tr key={item.id} className="border-t">
+                  <tr key={item.id} className="border-t ">
                     <td className="py-2 flex lg:flex-row lg:justify-start justify-center flex-col">
                       <img src={item.img} alt={item.title} className="w-12 h-12 mr-4" />
                       <div>
@@ -48,7 +48,7 @@ const Cart = () => {
                         value={item.quantity}
                         min="1"
                         onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                        className="w-16 p-1 border rounded"
+                        className="w-16 p-1 border rounded dark:bg-gray-900"
                       />
                     </td>
                     <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
@@ -67,7 +67,7 @@ const Cart = () => {
             </table>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 ">
             <h3 className="text-2xl font-semibold">Order Summary</h3>
             <div className="flex justify-between mt-4">
               <span>Total Items:</span>

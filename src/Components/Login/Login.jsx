@@ -44,7 +44,7 @@ const Login = () => {
                         {/* Shop <span className="text-[#000000d3]">-</span><span className="text-[#ff0505d3] font-extrabold">e</span> */}
                     </a>
                 </div>
-                <div className="relative z-10 bg-white/20 backdrop-blur-md dark:bg-gray-800  lg:mr-44 p-8 rounded-lg shadow-lg w-full max-w-md">
+                <div className="relative z-10 bg-white/30 backdrop-blur-3xl dark:bg-gray-800  lg:mr-44 p-8 rounded-lg shadow-lg w-full max-w-md">
                     <h2 className="text-2xl font-bold mb-6 text-center text-gray-700 dark:text-gray-200">Login</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
