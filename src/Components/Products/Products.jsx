@@ -30,7 +30,7 @@ const ProductsData = [
   {
     id: 2,
     img: image2,
-    title: "Casuals",
+    title: "Casuals Wear",
     rating: 4.0,
     color: "Red",
     price: 299,
@@ -40,7 +40,7 @@ const ProductsData = [
   {
     id: 3,
     img: image3,
-    title: "Boots",
+    title: "Boots Shoes",
     rating: 4.8,
     color: "Brown",
     price: 599,
@@ -204,13 +204,13 @@ const Products = () => {
 
           {/* Custom Navigation Buttons */}
           <button
-            className="absolute md:left-3 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white   md:py-6 py-2 rounded"
+            className="absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white   md:py-6 py-2 rounded"
             id="custom-prev"
           >
             <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
           </button>
           <button
-            className="absolute md:right-3 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white    md:py-6 py-2 rounded"
+            className="absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white    md:py-6 py-2 rounded"
             id="custom-next"
           >
             <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
@@ -241,11 +241,11 @@ const Products = () => {
             className=""
           >
             {ProductsData.map((data) => (
-              <SwiperSlide key={data.id} className="flex flex-col items-center">
+              <SwiperSlide key={data.id} className="flex flex-col justify-evenly">
                 <div
                   data-aos="fade-up"
                   data-aos-delay={data?.aosDelay}
-                  className="space-y-3 dark:bg-gray-800 bg-white rounded-lg p-3"
+                  className="space-y-3 dark:bg-gray-800 bg-white rounded-lg"
                 >
                   <img
                     src={data?.img}
@@ -268,7 +268,7 @@ const Products = () => {
                       className="mt-2 py-1 px-3 bg-blue-500 text-white rounded-md"
                     >
                       <div className="flex flex-row items-center gap-2">
-                        <FaCartPlus /> <span>Add to cart</span>
+                        <FaCartPlus /> <span className="lg:block hidden">Add to cart</span>
                       </div>
                     </button>
                   </Link>
