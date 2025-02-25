@@ -87,9 +87,9 @@ const ProductsData = [
 const TopProducts = () => {
   return (
     <div>
-      <div className="container">
+      <div className="">
         {/* header section */}
-        <div className=" text-left mb-10 ">
+        <div className=" text-left mb-10 container overflow-hidden mx-auto">
           <p data-aos="fade-up" className="text-sm text-primary">
             Top Rated Products for you
           </p>
@@ -106,26 +106,39 @@ const TopProducts = () => {
         spaceBetween={20}
         slidesPerView={1}
         breakpoints={{
-          380: { slidesPerView: 2.1 },
+          380: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
-          1024: { slidesPerView: 7 },
+          1024: { slidesPerView: 5 },
         }}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
-        className="px-2 py-12"
+        // navigation
+        pagination={{
+          dynamicBullets: true,
+          renderBullet: (index, className) => {
+            return `
+              <span class="${className} relative w-12 h-1 bg-gray-300 rounded-full transition-all duration-300 hover:scale-125 overflow-hidden">
+                <span class="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-primary to to-secondary transition-[width] duration-[3000ms] ease-linear loading-bar"></span>
+              </span>`;
+          },
+        }}
+
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false, // Keeps autoplay running after interaction
+          pauseOnMouseEnter: true, // Pauses when the user hovers over a product
+        }}
+        className="py-12 container overflow-hidden mx-auto"
       >
         {/* body section  */}
-        <div className="container  flex flex-1 place-items-center">
+        <div className="flex flex-1 place-items-center">
           {ProductsData.map((data) => (
             <SwiperSlide key={data.id}>
               <div
                 data-aos='zoom-in'
                 key={data?.id}
-                className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 pt-10 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-[200px]"
+                className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 pt-10 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group md:max-w-[200px] w-full"
               >
                 {/* image section */}
-                <div className="h-[50px]">
+                <div className="h-[50px] ">
                   <img
                     src={data?.img}
                     alt=""

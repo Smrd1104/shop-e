@@ -12,7 +12,9 @@ import image2 from "../../assets/vkc/shoe.jpg";
 import image3 from "../../assets/vkc/boots.jpg";
 import image4 from "../../assets/vkc/formals.jpg";
 import image5 from "../../assets/vkc/casuals.jpg";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+
 import { useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 
@@ -193,9 +195,10 @@ const Products = () => {
             </p>
             <h1 data-aos="fade-up" className="md:text-3xl text-lg font-bold">Products</h1>
           </div>
-          <button className="text-center md:text-sm text-xs md:-mt-5 -mt-10 cursor-pointer bg-gradient-to-r from-primary to-secondary text-white py-1 px-5 rounded-md">
-            View All Products
-          </button>
+          <div className=" dark:text-white flex flex-row duration-300 items-center gap-2 text-center md:text-sm text-xs md:-mt-5 -mt-10 cursor-pointer  text-gray-700 hover:scale-105 border border-gray-700  py-1 px-5 rounded-md">
+            View All <MdKeyboardDoubleArrowRight   className="text-[1.1rem]"/>
+
+          </div>
         </div>
         <div className="relative"
           onMouseEnter={() => setIsHovered(true)}
@@ -250,7 +253,7 @@ const Products = () => {
                   <img
                     src={data?.img}
                     alt="product"
-                    className="md:h-[150px] md:w-[150px] w-[100px] h-[80px] object-fit rounded-md"
+                    className="md:h-[150px] md:w-[170px] w-[120px] h-[80px] object-fit rounded-md"
                   />
                   <div>
                     <h3 className="font-semibold">{data?.title}</h3>
@@ -265,7 +268,7 @@ const Products = () => {
                   <Link to={data?.link}>
                     <button
                       onClick={() => addToCart(data)}
-                      className="mt-2 py-1 px-3 bg-blue-500 text-white rounded-md"
+                      className="mt-2 py-1 md:px-7 px-12 hover:scale-105 duration-300 bg-gradient-to-r from-primary to to-secondary text-white rounded-md"
                     >
                       <div className="flex flex-row items-center gap-2">
                         <FaCartPlus /> <span className="lg:block hidden">Add to cart</span>

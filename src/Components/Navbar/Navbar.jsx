@@ -111,9 +111,9 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               <input
                 type="text"
                 placeholder="Search"
-                className="md:w-[150px]  group-hover:w-[800px]  group-hover:bg-gray-100  transition-all duration-700 rounded-full  border-gray-400 px-2 py-1 focus:outline-none focus:border-1  focus:border-[] dark:border-[#ffe11b] dark:bg-gray-800"
+                className="md:w-[150px]  group-hover:w-[800px]  group-hover:bg-gray-100 dark:group-hover:bg-gray-800  transition-all duration-700 rounded-full  border-gray-400 px-2 py-1 focus:outline-none focus:border-1  focus:border-[] dark:border-[#ffe11b] dark:bg-gray-800"
               />
-              <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-black    absolute top-1/2 -translate-y-1/2 right-3" />
+              <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-white     absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             {/* order button */}
             <Link to='/cart'>

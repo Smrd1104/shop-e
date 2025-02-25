@@ -10,6 +10,9 @@ import image3 from "../../assets/vkc/womens-hills (1).png";
 import image4 from "../../assets/vkc/hand-bag (2).png";
 import image5 from "../../assets/vkc/t-shirt (3).png";
 import image6 from "../../assets/hero/hero-image3.png";
+import image7 from "../../assets/furniture.png";
+// import image8 from "../../assets/hero-banner.jpg"
+
 
 const ImageList = [
   {
@@ -54,6 +57,20 @@ const ImageList = [
     description:
       "His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
+  {
+    id: 7,
+    img: image7,
+    title: "Upto 50% off on all Household things",
+    description:
+      "His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  // {
+  //   id: 8,
+  //   img: image8,
+  //   title: "Upto 50% off on all Men's Sandals",
+  //   description:
+  //     "His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  // },
 ];
 
 const Hero = () => {
@@ -68,7 +85,21 @@ const Hero = () => {
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={50}
           slidesPerView={1}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          pagination={{
+            dynamicBullets: true,
+            renderBullet: (index, className) => {
+              return `
+                <span class="${className} relative w-12  h-1 bg-gray-300 rounded-full transition-all duration-300 hover:scale-125 overflow-hidden">
+                  <span class="absolute  left-0 top-0 h-full w-0 bg-gradient-to-r from-primary to to-secondary transition-[width] duration-[3000ms] ease-linear loading-bar"></span>
+                </span>`;
+            },
+          }}
+  
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false, // Keeps autoplay running after interaction
+            pauseOnMouseEnter: false, // Pauses when the user hovers over a product
+          }}
           loop={true}
           navigation={false}
           // pagination={{ clickable: false }}
@@ -125,6 +156,7 @@ const Hero = () => {
           ))}
         </Swiper>
       </div>
+      
     </div>
   );
 };
