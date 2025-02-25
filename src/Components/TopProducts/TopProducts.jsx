@@ -108,12 +108,12 @@ const TopProducts = () => {
         breakpoints={{
           380: { slidesPerView: 2.1 },
           640: { slidesPerView: 2 },
-          1024: { slidesPerView: 6 },
+          1024: { slidesPerView: 7 },
         }}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
-        className="px-5 py-12"
+        className="px-2 py-12"
       >
         {/* body section  */}
         <div className="container  flex flex-1 place-items-center">
