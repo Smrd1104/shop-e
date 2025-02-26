@@ -37,7 +37,7 @@ const Subscribe = () => {
   return (
     <div className="overflow-hidden">
       <div
-        data-aos="zoom-in"
+        // data-aos="zoom-in"
         className="mb-20 dark:bg-gray-100 text-white"
         style={BannerImg}
       >
@@ -48,14 +48,14 @@ const Subscribe = () => {
             </h1>
             <div className="flex flex-col items-center">
               <input
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 type="email"
                 placeholder="Enter your email"
                 className="w-full p-3 text-black focus:outline-none"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <div data-aos="fade-up">
+              <div>
                 <button
                   className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-300 text-black py-1 px-4 rounded-full mt-4"
                   onClick={handleSubscribe}

@@ -90,13 +90,13 @@ const TopProducts = () => {
       <div className="">
         {/* header section */}
         <div className=" text-left mb-10 container overflow-hidden mx-auto">
-          <p data-aos="fade-up" className="text-sm text-primary">
+          <p  className="text-sm text-primary">
             Top Rated Products for you
           </p>
-          <h1 data-aos="fade-up" className="text-3xl font-bold">
+          <h1  className="text-3xl font-bold">
             Best Products
           </h1>
-          <p data-aos="fade-up" className="text-xs text-gray-400">
+          <p  className="text-xs text-gray-400">
             Best products to sell tjis website
           </p>
         </div>
@@ -133,7 +133,7 @@ const TopProducts = () => {
           {ProductsData.map((data) => (
             <SwiperSlide key={data.id}>
               <div
-                data-aos='zoom-in'
+                // data-aos='zoom-in'
                 key={data?.id}
                 className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 pt-10 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group md:max-w-[200px] w-full"
               >

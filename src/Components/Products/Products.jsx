@@ -190,10 +190,10 @@ const Products = () => {
         {/* Header Section */}
         <div className="flex flex-row justify-between items-center">
           <div className="mb-10">
-            <p data-aos="fade-up" className="md:text-sm text-xs text-primary">
+            <p className="md:text-sm text-xs text-primary">
               Top Selling Products for You
             </p>
-            <h1 data-aos="fade-up" className="md:text-3xl text-lg font-bold">Products</h1>
+            <h1  className="md:text-3xl text-lg font-bold">Products</h1>
           </div>
           <div className=" dark:text-white flex flex-row duration-300 items-center gap-2 text-center md:text-sm text-xs md:-mt-5 -mt-10 cursor-pointer  text-gray-700 hover:scale-105 border border-gray-700  py-1 px-5 rounded-md">
             View All <MdKeyboardDoubleArrowRight   className="text-[1.1rem]"/>
@@ -246,8 +246,8 @@ const Products = () => {
             {ProductsData.map((data) => (
               <SwiperSlide key={data.id} className="flex flex-col justify-evenly">
                 <div
-                  data-aos="fade-up"
-                  data-aos-delay={data?.aosDelay}
+                  // data-aos="fade-up"
+                  // data-aos-delay={data?.aosDelay}
                   className="space-y-3 dark:bg-gray-800 bg-white rounded-lg"
                 >
                   <img

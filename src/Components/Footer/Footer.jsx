@@ -42,7 +42,7 @@ const Footer = () => {
     <div  className="text-white bg-black/70 overflow-hidden">
       {/* style={BannerImg} */}
       <div className="container">
-        <div data-aos='zoom-in' className="grid md:grid-cols-3 items-center pt-5">
+        <div  className="grid md:grid-cols-3 items-center pt-5">
           {/* company details */}
           <div className="py-8 px-4 -mt-10">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3 ">
