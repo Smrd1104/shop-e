@@ -101,7 +101,7 @@ const Hero = () => {
             <SwiperSlide key={data.id}>
               <div className="grid grid-cols-1 sm:grid-cols-2">
                 {/* Text Content */}
-                <div className="flex flex-col justify-center gap-4 sm:pt-0 text-center sm:text-left order-2  relative z-10">
+                <div className="flex flex-col justify-center gap-4  text-center sm:text-left order-2  relative z-10">
                   <h1
                     data-aos="zoom-out"
                     data-aos-once="true"
@@ -122,6 +122,7 @@ const Hero = () => {
                     data-aos="fade-up"
                     data-aos-delay="300"
                     data-aos-duration="500"
+                    className="md:pb-0 pb-5"
                   >
                     <button className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white px-4 py-2 rounded-full">
                       Order Now
@@ -134,12 +135,12 @@ const Hero = () => {
                   <div
                     data-aos="zoom-in"
                     data-aos-once="true"
-                    className="relative z-10"
+                    className="relative z-10  -pb-10"
                   >
                     <img
                       src={data.img}
                       alt="product"
-                      className="md:w-[350px] w-[250px]   md:h-[400px] h-[250px]  sm:scale-125 lg:scale-125 object-contain mx-auto"
+                      className="md:w-[350px] w-[200px]  md:h-[400px] h-[250px]  sm:scale-125 lg:scale-125 object-contain mx-auto"
                     />
                   </div>
                 </div>

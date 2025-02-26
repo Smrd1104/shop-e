@@ -7,11 +7,16 @@ import "swiper/css/pagination";
 
 const BannerSlider = ({ images }) => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 mx-2 shadow-lg py-3 bg-white dark:bg-gray-900  ">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={10}
         slidesPerView={5}
+        breakpoints={{
+            380: { slidesPerView: 2 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 5 },
+          }}
         loop={true}
         autoplay={{ delay: 3000 }}
         // navigation

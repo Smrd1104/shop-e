@@ -18,6 +18,9 @@ const Home = () => {
             <BannerHero/>
             <div className='-mt-10'>
             <Products />
+            <div className='-mt-8'>
+            <BannerHero/>
+            </div>
             <TopProducts />
             <Banner />
             <Subscribe />
