@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import img1 from "../../assets/shirt/shirt-1 (1).png";
 import img2 from "../../assets/vkc/t-shirt (8).png";
 import img3 from "../../assets/shirt/shirt-1 (5).png";
@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const ProductsData = [
   {
@@ -85,32 +86,61 @@ const ProductsData = [
 ];
 
 const TopProducts = () => {
+  const [isPrevActive, setIsPrevActive] = useState(false);
+  const [isNextActive, setIsNextActive] = useState(true); // Initially, next is active
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <div>
+    <div className="shadow-lg mx-2 rounded bg-white py-5 -mt-8">
       <div className="">
         {/* header section */}
-        <div className=" text-left mb-10 container overflow-hidden mx-auto">
-          <p  className="text-sm text-primary">
+        <div className=" text-left mb-10  container overflow-hidden mx-auto">
+          <p className="text-sm text-primary">
             Top Rated Products for you
           </p>
-          <h1  className="text-3xl font-bold">
+          <h1 className="text-3xl font-bold">
             Best Products
           </h1>
-          <p  className="text-xs text-gray-400">
+          <p className="text-xs text-gray-400">
             Best products to sell tjis website
           </p>
         </div>
       </div>
+      <div className="relative"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+      
+                {/* Custom Navigation Buttons */}
+                <button
+                  className="lg:block hidden absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white   md:py-8 py-2 px-2 rounded"
+                  id="top-prev"
+                >
+                  <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
+                </button>
+                <button
+                  className="lg:block hidden absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white    md:py-8 py-2 px-2 rounded"
+                  id="top-next"
+                >
+                  <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
+                </button>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={20}
+        spaceBetween={10}
         slidesPerView={1}
         breakpoints={{
           380: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
-          1024: { slidesPerView: 5 },
+          1024: { slidesPerView: 6 },
         }}
-        // navigation
+        navigation={{
+          nextEl: "#top-next",
+          prevEl: "#top-prev",
+        }}
+        // autoplay={{ delay: 3000 }}
+        onSlideChange={(swiper) => {
+          setIsPrevActive(swiper.activeIndex > 0);
+          setIsNextActive(swiper.activeIndex < swiper.slides.length -6);
+        }}
         pagination={{
           dynamicBullets: true,
           renderBullet: (index, className) => {
@@ -167,6 +197,7 @@ const TopProducts = () => {
           ))}
         </div>
       </Swiper>
+      </div>
     </div>
   );
 };

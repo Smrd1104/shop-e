@@ -9,19 +9,20 @@ import Testimonials from '../Components/Testimonials/Testimoinals'
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-gray-100'>
             <Advertisement />
+            <div className='shadow-lg  '>
             <Hero />
-            <Products />
-            <Products />
-            <TopProducts />
-            <Products />
+            </div>
+            <div className='-mt-10'>
             <Products />
             <TopProducts />
             <Banner />
             <Subscribe />
-            <Products />
+            
             <Testimonials />
+            </div>
+          
         </div>
     )
 }

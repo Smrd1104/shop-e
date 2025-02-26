@@ -185,7 +185,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="mt-14 mb-12 ">
+    <div className="mt-14 mb-12 mx-2 shadow-lg py-5 rounded bg-white">
       <div className="container mx-auto overflow-hidden">
         {/* Header Section */}
         <div className="flex flex-row justify-between items-center">
@@ -207,13 +207,13 @@ const Products = () => {
 
           {/* Custom Navigation Buttons */}
           <button
-            className="absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white   md:py-6 py-2 rounded"
+            className="lg:block hidden absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white   md:py-6 py-2 rounded"
             id="custom-prev"
           >
             <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
           </button>
           <button
-            className="absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white    md:py-6 py-2 rounded"
+            className="lg:block hidden absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white    md:py-6 py-2 rounded"
             id="custom-next"
           >
             <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
@@ -248,12 +248,12 @@ const Products = () => {
                 <div
                   // data-aos="fade-up"
                   // data-aos-delay={data?.aosDelay}
-                  className="space-y-3 dark:bg-gray-800 bg-white rounded-lg"
+                  className="space-y-3 dark:bg-gray-800 bg-white rounded-lg "
                 >
                   <img
                     src={data?.img}
                     alt="product"
-                    className="md:h-[150px] md:w-[170px] w-[120px] h-[80px] object-fit rounded-md"
+                    className="md:h-[150px] md:w-[170px] w-[120px] h-[80px] object-fit rounded-md hover:scale-105 duration-200"
                   />
                   <div>
                     <h3 className="font-semibold">{data?.title}</h3>

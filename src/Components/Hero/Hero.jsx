@@ -67,7 +67,7 @@ const ImageList = [
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden  bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
+    <div className="relative overflow-hidden pb-2  bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
       {/* Background pattern */}
       <div className="md:w-[650px] w-[500px] h-[500px] md:h-[480px]  bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/60 absolute -top-1/2  md:-translate-y-8 right-0 rounded-3xl rotate-45 -z-9 "></div>
       
