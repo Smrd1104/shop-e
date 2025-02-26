@@ -7,32 +7,43 @@ import Advertisement from "../Advertisement/Advertisement";
 import { CgProfile } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import img1 from "../../assets/navbar/mobile.png"
+import img2 from "../../assets/navbar/mobile.png"
+import img3 from "../../assets/navbar/mobile.png"
+import img4 from "../../assets/navbar/mobile.png"
+import img5 from "../../assets/navbar/mobile.png"
+import img6 from "../../assets/navbar/mobile.png"
 
 const Menu = [
   {
     id: 1,
-    name: "Home",
+    name: "Mobile",
+    img: img1,
     link: "#",
 
   },
   {
     id: 2,
-    name: "Top Rated",
+    name: "Appliances",
+    img: img1,
     link: "#",
   },
   {
     id: 3,
-    name: "Kids Wear",
+    name: "Fashion",
+    img: img1,
     link: "#",
   },
   {
     id: 4,
-    name: "Mens Wear",
+    name: "Electronics",
+    img: img1,
     link: "#",
   },
   {
     id: 5,
-    name: "Electronics",
+    name: "Kilos",
+    img: img1,
     link: "#",
   },
 ];
@@ -41,16 +52,55 @@ const DropdownLinks = [
   {
     id: 1,
     name: "Trending Products",
+    img: img1,
     link: "#",
   },
   {
     id: 2,
     name: "Best Selling",
+    img: img1,
     link: "#",
   },
   {
     id: 3,
     name: "Top Rated",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 1,
+    name: "Trending Products",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 1,
+    name: "Trending Products",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 1,
+    name: "Trending Products",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 1,
+    name: "Trending Products",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 1,
+    name: "Trending Products",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 1,
+    name: "Trending Products",
+    img: img1,
     link: "#",
   },
 ];
@@ -91,7 +141,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
   console.log('isAuthenticated: ', isAuthenticated);
 
   return (
-    <div className="shadow-md bg-white   dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="shadow-2xl dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="fixed z-[9999] top-0 left-0 right-0 bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/50 backdrop-blur-md ">
         <div className="container flex justify-between items-center">
@@ -101,7 +151,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               className="font-bold text-[#020b38d3] dark:text-white text-2xl sm:text-3xl flex gap-2"
             >
               <img src={Logo} alt="logo" className="w-14" />
-                {/* Shop <span className="text-[#000000d3]">-</span>
+              {/* Shop <span className="text-[#000000d3]">-</span>
                 <span className="text-[#ff0505d3] font-extrabold">e</span> */}
             </a>
           </div>
@@ -113,7 +163,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
                 placeholder="Search"
                 className="md:w-[150px]  group-hover:w-[800px]  group-hover:bg-gray-100 dark:group-hover:bg-gray-800  transition-all duration-700 rounded-full  border-gray-400 px-2 py-1 focus:outline-none focus:border-1  focus:border-[] dark:border-[#ffe11b] dark:bg-gray-800"
               />
-              <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-white     absolute top-1/2 -translate-y-1/2 right-3" />
+              <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-black dark:group-hover:text-white    absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             {/* order button */}
             <Link to='/cart'>
@@ -175,10 +225,12 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
         </div>
       </div>
       {/* lower Navbar */}
-      <div className="flex mt-14 justify-center bg-gray-100 dark:text-white dark:bg-black">
-        <ul className="sm:flex hidden items-center gap-4">
+      <div className=" mt-14  bg-white dark:bg-gray-900 mx-2 rounded  shadow-lg dark:text-white ">
+        <ul className="sm:flex  hidden items-center justify-evenly gap-4 ">
+          {/* Mapping Menu items */}
           {Menu.map((data) => (
-            <li key={data.id}>
+            <li key={data.id} className="flex flex-col items-center gap-2">
+              <img src={data.img} alt={data.name} className="w-12" />
               <a
                 href={data.link}
                 className="inline-block px-4 hover:text-primary duration-200"
@@ -187,18 +239,21 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               </a>
             </li>
           ))}
-          {/* simple dropdown and links */}
-          <li className="group relative cursor-pointer">
+
+          {/* Simple dropdown and links */}
+          <li className="group relative cursor-pointer mt-2">
+          <img src={img1} alt="name" className="w-12" />
             <a href="#" className="flex items-center gap-[2px] py-2">
               Trending
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
+            <div className="absolute z-[9999] hidden group-hover:block w-[300px] h-auto right-0 rounded-md bg-white p-2 text-black shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
-                  <li key={data.id}>
+                  <li key={data.id} className="flex flex-row">
+                    <img src={data.img} alt={data.name} className="w-12" />
                     <a
                       href={data.link}
                       className="inline-block w-full rounded-md p-2 hover:bg-gradient-to-r from-primary to-secondary/30"
@@ -212,6 +267,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
           </li>
         </ul>
       </div>
+
     </div>
   );
 };

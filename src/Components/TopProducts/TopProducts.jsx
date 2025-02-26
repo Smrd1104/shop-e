@@ -99,7 +99,7 @@ const TopProducts = () => {
     }
   }, []);
   return (
-    <div className="shadow-lg mx-2 rounded bg-white  dark:bg-gray-900 py-5 mt-5">
+    <div className="shadow-lg mx-2 rounded  bg-white  dark:bg-gray-900 py-5 mt-5">
       <div className="">
         {/* header section */}
         <div className=" text-left mb-10  container overflow-hidden mx-auto">

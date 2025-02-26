@@ -10,9 +10,9 @@ import BannerHero from '../Components/Banner/BannerHero'
 
 const Home = () => {
     return (
-        <div className='bg-gray-50 dark:bg-gray-800'>
+        <div className=' dark:bg-gray-900 '>
             <Advertisement />
-            <div className='shadow-lg  '>
+            <div className='shadow-lg md:mt-5 -mt-6  '>
             <Hero />
             </div>
             <BannerHero/>
