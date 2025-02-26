@@ -185,7 +185,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="mt-14 mb-12 mx-2 shadow-lg py-5 rounded bg-white">
+    <div className="mt-14 mb-12 mx-2 shadow-lg py-5 rounded dark:bg-gray-900 bg-white">
       <div className="container mx-auto overflow-hidden">
         {/* Header Section */}
         <div className="flex flex-row justify-between items-center">
@@ -207,16 +207,16 @@ const Products = () => {
 
           {/* Custom Navigation Buttons */}
           <button
-            className="lg:block hidden absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white   md:py-6 py-2 rounded"
+            className="lg:block hidden absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white dark:bg-gray-800  md:py-6 py-2 rounded"
             id="custom-prev"
           >
-            <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
+            <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700 dark:text-white" : "text-gray-500 hidden"}`} />
           </button>
           <button
-            className="lg:block hidden absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white    md:py-6 py-2 rounded"
+            className="lg:block hidden absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white  dark:bg-gray-800  md:py-6 py-2 rounded"
             id="custom-next"
           >
-            <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700" : "text-gray-500 hidden"}`} />
+            <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700 dark:text-white" : "text-gray-500 hidden"}`} />
           </button>
 
           {/* Swiper Slider */}

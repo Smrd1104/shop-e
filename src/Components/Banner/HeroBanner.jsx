@@ -1,0 +1,35 @@
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const BannerSlider = ({ images }) => {
+  return (
+    <div className="mt-5">
+      <Swiper
+        modules={[Autoplay, Navigation, Pagination]}
+        spaceBetween={10}
+        slidesPerView={5}
+        loop={true}
+        autoplay={{ delay: 3000 }}
+        // navigation
+        // pagination={{ clickable: true }}
+        className="w-full"
+      >
+        {images.map((item) => (
+          <SwiperSlide key={item.id}>
+            <img
+              src={item.images} // Ensure this is correctly passed
+              alt={`banner-${item.id}`}
+              className="w-full h-[80px] object-contain"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
+export default BannerSlider;
