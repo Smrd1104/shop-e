@@ -8,9 +8,9 @@ import { CgProfile } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import img1 from "../../assets/navbar/mobile.png"
-import img2 from "../../assets/navbar/mobile.png"
+import img2 from "../../assets/navbar/fashion.png"
 import img3 from "../../assets/navbar/mobile.png"
-import img4 from "../../assets/navbar/mobile.png"
+import img4 from "../../assets/navbar/electronics.png"
 import img5 from "../../assets/navbar/mobile.png"
 import img6 from "../../assets/navbar/mobile.png"
 
@@ -25,7 +25,7 @@ const Menu = [
   {
     id: 2,
     name: "Appliances",
-    img: img1,
+    img: img2,
     link: "#",
   },
   {
@@ -37,13 +37,32 @@ const Menu = [
   {
     id: 4,
     name: "Electronics",
-    img: img1,
+    img: img2,
     link: "#",
   },
   {
     id: 5,
     name: "Kilos",
     img: img1,
+    link: "#",
+  },
+  {
+    id: 6,
+    name: "Mobile",
+    img: img2,
+    link: "#",
+
+  },
+  {
+    id: 7,
+    name: "Appliances",
+    img: img1,
+    link: "#",
+  },
+  {
+    id: 8,
+    name: "Fashion",
+    img: img2,
     link: "#",
   },
 ];
@@ -141,7 +160,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
   console.log('isAuthenticated: ', isAuthenticated);
 
   return (
-    <div className="shadow-2xl dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="shadow-sm dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="fixed z-[9999] top-0 left-0 right-0 bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/50 backdrop-blur-md ">
         <div className="container flex justify-between items-center">

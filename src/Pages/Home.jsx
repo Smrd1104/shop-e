@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div className=' dark:bg-gray-900 '>
             <Advertisement />
-            <div className='shadow-lg md:mt-5 -mt-6  '>
+            <div className='shadow-lg md:mt-2 -mt-6  '>
             <Hero />
             </div>
             <BannerHero/>
