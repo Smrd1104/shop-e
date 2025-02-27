@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -12,6 +12,8 @@ import image5 from "../../assets/vkc/t-shirt (3).png";
 import image6 from "../../assets/hero/hero-image3.png";
 import image7 from "../../assets/furniture.png";
 import image8 from "../../assets/hero/headphone.avif"
+import { useState } from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 
 const ImageList = [
@@ -19,64 +21,90 @@ const ImageList = [
     id: 1,
     img: image1,
     title: "Upto 50% off on all Men's Sandals",
-     
+
   },
   {
     id: 2,
     img: image2,
     title: "Upto 70% off on all Women's Slipper",
-     
+
   },
   {
     id: 3,
     img: image8,
     title: "Upto 80% off on all Headphones ",
-     
+
   },
   {
     id: 4,
     img: image4,
     title: "Upto 50% off on all Women's Hand Bags",
-     
+
   },
   {
     id: 5,
     img: image5,
     title: "Upto 60% off on all Men's t-shirts",
-     
+
   },
   {
     id: 6,
     img: image6,
     title: "More offers on all Products",
-     
+
   },
   {
     id: 7,
     img: image7,
     title: "Upto 50% off on all Household things",
-     
+
   },
   {
     id: 8,
     img: image8,
     title: "Upto 50% off on all Men's Sandals",
-     
+
   },
 ];
 
 const Hero = () => {
+  const swiperRef = useRef(null);
+  const [isPrevActive, setIsPrevActive] = useState(false);
+  const [isNextActive, setIsNextActive] = useState(true); // Initially, next is active
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="relative overflow-hidden   bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
       {/* Background pattern */}
       <div className="md:w-[700px] w-[500px] h-[500px] md:h-[600px]  bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/60 absolute -top-1/2  md:-translate-y-8 -right-40 rounded-3xl rotate-45 -z-9 "></div>
-      
+
       {/* Hero Section */}
-      <div className="container  sm:pb-0">
+      <div className="relative container sm:pb-0"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+
+        {/* Custom Navigation Buttons */}
+        <button
+          className="lg:block hidden absolute md:left-0 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl  bg-white dark:bg-gray-800  md:py-6 py-2 rounded"
+          id="hero-prev"
+        >
+          <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700 dark:text-white" : "text-gray-500 hidden"}`} />
+        </button>
+        <button
+          className="lg:block hidden absolute md:right-0 right-0 top-1/2  z-10 -translate-y-1/2 shadow-3xl bg-white  dark:bg-gray-800  md:py-6 py-2 rounded"
+          id="hero-next"
+        >
+          <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700 dark:text-white" : "text-gray-500 hidden"}`} />
+        </button>
         <Swiper
+          ref={swiperRef}
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={50}
           slidesPerView={1}
+          navigation={{
+            nextEl: "#hero-next",
+            prevEl: "#hero-prev",
+          }}
           pagination={{
             dynamicBullets: true,
             renderBullet: (index, className) => {
@@ -86,14 +114,18 @@ const Hero = () => {
                 </span>`;
             },
           }}
-  
+          onSlideChange={(swiper) => {
+            setIsPrevActive(swiper.activeIndex > 0);
+            setIsNextActive(swiper.activeIndex < swiper.slides.length -1);
+          }}
+
           autoplay={{
             delay: 3000,
             disableOnInteraction: false, // Keeps autoplay running after interaction
             pauseOnMouseEnter: false, // Pauses when the user hovers over a product
           }}
-          loop={true}
-          navigation={false}
+          loop={false}
+         
           // pagination={{ clickable: false }}
           className="w-full"
         >
@@ -150,7 +182,7 @@ const Hero = () => {
         </Swiper>
         <div className="absolute py-2.5  left-0 bottom-0 z-100 bg-gray-950 w-full"></div>
       </div>
-      
+
     </div>
   );
 };

@@ -14,9 +14,8 @@ import image4 from "../../assets/vkc/formals.jpg";
 import image5 from "../../assets/vkc/casuals.jpg";
 import { IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-
-import { useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
+import { useState } from "react";
 
 const ProductsData = [
   {
@@ -239,7 +238,7 @@ const Products = () => {
             // autoplay={{ delay: 3000 }}
             onSlideChange={(swiper) => {
               setIsPrevActive(swiper.activeIndex > 0);
-              setIsNextActive(swiper.activeIndex < swiper.slides.length - 7);
+              setIsNextActive(swiper.activeIndex < swiper.slides.length -7);
             }}
             className=""
           >
