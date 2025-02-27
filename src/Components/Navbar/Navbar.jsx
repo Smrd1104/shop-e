@@ -7,11 +7,11 @@ import Advertisement from "../Advertisement/Advertisement";
 import { CgProfile } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
-import img1 from "../../assets/navbar/mobile.png"
-import img2 from "../../assets/navbar/fashion.png"
-import img3 from "../../assets/navbar/mobile.png"
-import img4 from "../../assets/navbar/electronics.png"
-import img5 from "../../assets/navbar/mobile.png"
+import img1 from "../../assets/navbar/phone.png"
+import img2 from "../../assets/navbar/elec.png"
+import img3 from "../../assets/navbar/fashion.png"
+import img4 from "../../assets/navbar/laptop.png"
+import img5 from "../../assets/navbar/kilos.png"
 import img6 from "../../assets/navbar/mobile.png"
 
 const Menu = [
@@ -31,19 +31,19 @@ const Menu = [
   {
     id: 3,
     name: "Fashion",
-    img: img1,
+    img: img3,
     link: "#",
   },
   {
     id: 4,
     name: "Electronics",
-    img: img2,
+    img: img4,
     link: "#",
   },
   {
     id: 5,
     name: "Kilos",
-    img: img1,
+    img: img5,
     link: "#",
   },
   {
