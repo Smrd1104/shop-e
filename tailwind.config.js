@@ -19,7 +19,7 @@ export default {
         }
       },
       fontFamily: {
-        'fira': ['Fira Sans', 'sans-serif'],
+        'Roboto': ['Roboto', 'serif'],
       },
     },
   },

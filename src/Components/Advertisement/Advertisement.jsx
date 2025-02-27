@@ -43,11 +43,11 @@ const AdvertisementData = [
 const Advertisement = () => {
   return (
     <div
-      className={`hidden shadow-2xl mt-2  sm:block dark:border   bg-gradient-to-r from-[#0F56A6] via-[#ED8023] via-[#00A8CE] to-[#FCB714]/50  mx-2 dark:bg-gray-900 dark:text-white  flex-1 text-center ${classes.advertisementContainer}`}
+      className={`hidden shadow-2xl mt-2  sm:block dark:border   bg-gradient-to-r from-[#0F56A6]/50 via-[#ED8023]/50 via-[#00A8CE]/20 to-[#FCB714]/50  mx-2 dark:bg-gray-900 dark:text-white  flex-1 text-center ${classes.advertisementContainer}`}
     >
       <div className="container">
         <div
-          className={`${classes.animateSlide} bg-transparent text-xs text-white dark:text-white p-1 `}
+          className={`${classes.animateSlide} bg-transparent text-xs text-gray-900 dark:text-white p-1 `}
         >
           {/* Advertisement Here */}
           <div className="grid grid-cols-9  sm:grid-cols-8  items-center">
