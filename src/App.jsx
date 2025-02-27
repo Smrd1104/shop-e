@@ -25,7 +25,9 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 const App = () => {
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    return sessionStorage.getItem("appLoaded") ? false : true;
+  });
 
   const [orderPopup, setOrderPopup] = React.useState(false);
 
@@ -43,18 +45,27 @@ const App = () => {
     });
     AOS.refresh();
 
-    setTimeout(() => {
-      setLoading(false);
-      // navigate('/'); // Navigate to home page after loading completes
+    if (!sessionStorage.getItem("appLoaded")) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem("appLoaded", "true");
+      }, 3000); // 3 seconds
 
-    }, 1500); // Adjust the timeout to simulate loading time
+      return () => clearTimeout(timer);
+    }
   }, []);
-
+  if (loading) {
+    return (
+      <div className=" flex items-center justify-center min-h-screen">
+        <Loader/>
+      </div>
+    );
+  }
   return (
     <div className="">
      
       <ScrollToTop />
-      {loading ? <Loader /> : (
+      
       <Routes>
     
         <Route path="/login" element={<Login />} />
@@ -66,7 +77,7 @@ const App = () => {
           <Route path="/table" element={<Table />} />
         </Route>
       </Routes>
-       )}
+      
     </div>
   );
 };
