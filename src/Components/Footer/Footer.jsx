@@ -39,7 +39,7 @@ const FooterLinks = [
 ];
 const Footer = () => {
   return (
-    <div  className="text-white bg-black/70 overflow-hidden -mt-10">
+    <div  className="text-white bg-black/70 overflow-hidden ">
       {/* style={BannerImg} */}
       <div className="container">
         <div  className="grid md:grid-cols-3 items-center pt-5">

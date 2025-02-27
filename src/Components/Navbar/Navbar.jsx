@@ -248,7 +248,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
         <ul className="sm:flex  hidden items-center justify-evenly gap-4 ">
           {/* Mapping Menu items */}
           {Menu.map((data) => (
-            <li key={data.id} className="flex flex-col items-center gap-2">
+            <li key={data.id} className="flex flex-col items-center text-sm gap-2">
               <img src={data.img} alt={data.name} className="w-12" />
               <a
                 href={data.link}
@@ -262,7 +262,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
           {/* Simple dropdown and links */}
           <li className="group relative cursor-pointer mt-2">
           <img src={img1} alt="name" className="w-12" />
-            <a href="#" className="flex items-center gap-[2px] py-2">
+            <a href="#" className="flex text-sm items-center gap-[2px] py-2">
               Trending
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
@@ -271,7 +271,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
             <div className="absolute z-[9999] hidden group-hover:block w-[300px] h-auto right-0 rounded-md bg-white p-2 text-black shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
-                  <li key={data.id} className="flex flex-row">
+                  <li key={data.id} className="flex flex-row text-sm">
                     <img src={data.img} alt={data.name} className="w-12" />
                     <a
                       href={data.link}
