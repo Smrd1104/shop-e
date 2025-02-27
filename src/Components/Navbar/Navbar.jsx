@@ -83,49 +83,49 @@ const DropdownLinks = [
   {
     id: 2,
     name: "Best Selling",
-    img: img1,
+    img: img2,
     link: "#",
   },
   {
     id: 3,
     name: "Top Rated",
-    img: img1,
+    img: img3,
     link: "#",
   },
   {
-    id: 1,
+    id: 4,
     name: "Trending Products",
-    img: img1,
+    img: img4,
     link: "#",
   },
   {
-    id: 1,
+    id: 5,
     name: "Trending Products",
-    img: img1,
+    img: img5,
     link: "#",
   },
   {
-    id: 1,
+    id: 6,
     name: "Trending Products",
-    img: img1,
+    img: img4,
     link: "#",
   },
   {
-    id: 1,
+    id: 7,
     name: "Trending Products",
-    img: img1,
+    img: img3,
     link: "#",
   },
   {
-    id: 1,
+    id: 8,
     name: "Trending Products",
-    img: img1,
+    img: img2,
     link: "#",
   },
   {
-    id: 1,
+    id: 9,
     name: "Trending Products",
-    img: img1,
+    img: img5,
     link: "#",
   },
 ];
@@ -276,14 +276,14 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[300px] h-auto right-0 rounded-md bg-white p-2 text-black shadow-md">
+            <div className="absolute z-[9999]  hidden group-hover:block w-[300px] h-auto right-0 rounded-md bg-white p-2 text-gray-700  shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
-                  <li key={data.id} className="flex flex-row text-sm">
+                  <li key={data.id} className="flex hover:bg-gradient-to-r from-primary to-secondary/30 flex-row  hover:translate-x-1 duration-300 hover:text-white items-center gap-3 text-sm">
                     <img src={data.img} alt={data.name} className="w-12" />
                     <a
                       href={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-gradient-to-r from-primary to-secondary/30"
+                      className="inline-block w-full rounded-md p-2 "
                     >
                       {data.name}
                     </a>
