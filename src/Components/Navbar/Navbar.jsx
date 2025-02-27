@@ -65,6 +65,12 @@ const Menu = [
     img: img2,
     link: "#",
   },
+  {
+    id: 9,
+    name: "Mobile",
+    img: img1,
+    link: "#",
+  },
 ];
 
 const DropdownLinks = [
@@ -244,12 +250,14 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
         </div>
       </div>
       {/* lower Navbar */}
-      <div className=" mt-14  bg-white dark:bg-gray-900 mx-2 rounded  shadow-lg dark:text-white ">
-        <ul className="sm:flex  hidden items-center justify-evenly gap-4 ">
+      <div className=" mt-14   bg-white dark:bg-gray-900 mx-2 rounded  shadow-lg dark:text-white ">
+        <ul className="sm:flex  hidden items-center justify-between  container mx-auto ">
           {/* Mapping Menu items */}
           {Menu.map((data) => (
-            <li key={data.id} className="flex flex-col items-center text-sm gap-2">
-              <img src={data.img} alt={data.name} className="w-12" />
+            <li key={data.id} className="flex flex-col items-center text-sm gap-2 ">
+              <a  href={data.link}>
+                <img src={data.img} alt={data.name} className="w-12" />
+              </a>
               <a
                 href={data.link}
                 className="inline-block px-4 hover:text-primary duration-200"
@@ -261,7 +269,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
 
           {/* Simple dropdown and links */}
           <li className="group relative cursor-pointer mt-2">
-          <img src={img1} alt="name" className="w-12" />
+            <img src={img2} alt="name" className="w-12" />
             <a href="#" className="flex text-sm items-center gap-[2px] py-2">
               Trending
               <span>

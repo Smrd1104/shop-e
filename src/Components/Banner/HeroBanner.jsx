@@ -15,13 +15,13 @@ const BannerSlider = ({ images }) => {
         breakpoints={{
             380: { slidesPerView: 2 },
             640: { slidesPerView: 2 },
-            1024: { slidesPerView: 5 },
+            1024: { slidesPerView: 4 },
           }}
         loop={true}
         autoplay={{ delay: 3000 }}
         // navigation
         // pagination={{ clickable: true }}
-        className="w-full"
+        className="w-full container mx-auto"
       >
         {images.map((item) => (
           <SwiperSlide key={item.id}>

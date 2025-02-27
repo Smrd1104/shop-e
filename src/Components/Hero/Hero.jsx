@@ -29,8 +29,8 @@ const ImageList = [
   },
   {
     id: 3,
-    img: image3,
-    title: "Upto 80% off on all Women's Hills",
+    img: image8,
+    title: "Upto 80% off on all Headphones ",
      
   },
   {
@@ -67,9 +67,9 @@ const ImageList = [
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden pb-2  bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
+    <div className="relative overflow-hidden   bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
       {/* Background pattern */}
-      <div className="md:w-[650px] w-[500px] h-[500px] md:h-[480px]  bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/60 absolute -top-1/2  md:-translate-y-8 right-0 rounded-3xl rotate-45 -z-9 "></div>
+      <div className="md:w-[700px] w-[500px] h-[500px] md:h-[600px]  bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/60 absolute -top-1/2  md:-translate-y-8 -right-40 rounded-3xl rotate-45 -z-9 "></div>
       
       {/* Hero Section */}
       <div className="container  sm:pb-0">
@@ -106,7 +106,7 @@ const Hero = () => {
                     data-aos="zoom-out"
                     data-aos-once="true"
                     data-aos-duration="500"
-                    className="md:text-[3.5rem] text-[1.5rem]   font-bold"
+                    className="md:text-[2.5rem] text-[1.5rem]   font-bold"
                   >
                     {data.title}
                   </h1>
@@ -140,7 +140,7 @@ const Hero = () => {
                     <img
                       src={data.img}
                       alt="product"
-                      className="md:w-[350px] w-[200px]  md:h-[400px] h-[250px]  sm:scale-125 lg:scale-125 object-contain mx-auto"
+                      className="md:w-[200px] w-[200px]  md:h-[300px] h-[250px]  sm:scale-125 lg:scale-125 object-contain mx-auto"
                     />
                   </div>
                 </div>
@@ -148,6 +148,7 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="absolute py-2.5  left-0 bottom-0 z-100 bg-gray-950 w-full"></div>
       </div>
       
     </div>
