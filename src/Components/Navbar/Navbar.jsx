@@ -276,7 +276,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div className="absolute z-[9999]  hidden group-hover:block w-[300px] h-auto right-0 rounded-md bg-white p-2 text-gray-700  shadow-md">
+            <div className="absolute z-[9999] dark:bg-gray-800 dark:text-white hidden group-hover:block w-[300px] h-auto right-0 rounded-md bg-white p-2 text-gray-700  shadow-md">
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id} className="flex hover:bg-gradient-to-r from-primary to-secondary/30 flex-row  hover:translate-x-1 duration-300 hover:text-white items-center gap-3 text-sm">
