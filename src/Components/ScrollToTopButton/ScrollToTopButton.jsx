@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BiSolidUpArrow } from "react-icons/bi";
-import gsap from "gsap";
 
 const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -11,15 +10,14 @@ const ScrollToTopButton = () => {
         const scrollTop = window.scrollY;
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = (scrollTop / scrollHeight) * 100;
-        
-        gsap.to("#scroll-progress", { strokeDashoffset: 100 - progress, duration: 0.5, ease: "power2.out" });
         setScrollProgress(progress);
+        
         setIsVisible(scrollTop > 300);
     };
 
     // Scroll the window to the top
     const scrollToTop = () => {
-        gsap.to(window, { scrollTo: { y: 0, autoKill: true }, duration: 1, ease: "power2.out" });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -32,12 +30,12 @@ const ScrollToTopButton = () => {
             {isVisible && (
                 <button 
                     onClick={scrollToTop} 
-                    className="relative p-3 rounded-full bg-primary text-white hover:bg-secondary transition-opacity opacity-70 hover:opacity-100"
+                    className="relative p-3 rounded-full bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6] text-white  transition-opacity opacity-70 hover:opacity-100"
                 >
                     <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
                         <circle
-                            className="text-secondary"
-                            strokeWidth="4"
+                            className="bg-clip-text text-transparent bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]"
+                            strokeWidth="3.5"
                             stroke="currentColor"
                             fill="transparent"
                             r="16"
@@ -45,11 +43,10 @@ const ScrollToTopButton = () => {
                             cy="18"
                         />
                         <circle
-                            id="scroll-progress"
-                            className="text-primary"
-                            strokeWidth="4"
+                            className="bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]"
+                            strokeWidth="3.5"
                             strokeDasharray="100"
-                            strokeDashoffset="100"
+                            strokeDashoffset={100 - scrollProgress}
                             strokeLinecap="round"
                             stroke="currentColor"
                             fill="transparent"
