@@ -131,7 +131,7 @@ const Hero = () => {
         >
           {ImageList.map((data) => (
             <SwiperSlide key={data.id}>
-              <div className="grid grid-cols-1 sm:grid-cols-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 pb-10">
                 {/* Text Content */}
                 <div className="flex flex-col justify-center gap-4  text-center sm:text-left order-2  relative z-10">
                   <h1

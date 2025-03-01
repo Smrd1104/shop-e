@@ -141,11 +141,11 @@ const Testimonials = () => {
           </button>
           <Swiper modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={5}
-            slidesPerView={3}
+            
             breakpoints={{
               380: { slidesPerView: 1 },
               640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
               1024: { slidesPerView: 4 },
               1280: { slidesPerView: 4 },
             }}
@@ -179,7 +179,7 @@ const Testimonials = () => {
               {TestimonialData.map((data) => (
                 <SwiperSlide key={data.id} >
                   <div key={data.id} className="pb-10">
-                    <div className="flex flex-col gap-4 hover:scale-105 shadow-lg px-2 py-2  rounded-xl dark:bg-gradient-to-r from-primary to-secondary/90 bg-primary/10 relative">
+                    <div className="flex flex-col gap-4  shadow-lg px-2 py-2  rounded-xl dark:bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/50 bg-primary/10 relative">
                       <div className="mb-4">
                         <img
                           src={data.img}
