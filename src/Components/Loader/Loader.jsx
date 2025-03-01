@@ -6,7 +6,7 @@ const Loader = () => {
   return (
     <div className="fixed inset-0 flex justify-center gap-10 items-center flex-col  bg-gradient-to-b from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/50 ">
 
-      <div className=' animate-pulse'>
+      <div className=''>
        
           <img src={Logo} alt="logo" className="w-32 object-contain rounded-full border shadow-2xl bg-gradient-to-t from-[#0F56A6] via-[#ED8023] via-[#00A8CE] to-[#FCB714]" />
                  
