@@ -3,8 +3,6 @@ import Logo from "../../assets/new-logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
-import Advertisement from "../Advertisement/Advertisement";
-import { CgProfile } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 import img1 from "../../assets/navbar/phone.png"
@@ -12,7 +10,9 @@ import img2 from "../../assets/navbar/elec.png"
 import img3 from "../../assets/navbar/fashion.png"
 import img4 from "../../assets/navbar/laptop.png"
 import img5 from "../../assets/navbar/kilos.png"
-import img6 from "../../assets/navbar/mobile.png"
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext"; // Adjust the import path as needed
+
 
 const Menu = [
   {
@@ -165,6 +165,10 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
 
   console.log('isAuthenticated: ', isAuthenticated);
 
+  const { cart } = useContext(CartContext); // Access the cart data from CartContext
+
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <div className="shadow-sm dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
@@ -191,15 +195,20 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-black dark:group-hover:text-white    absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             {/* order button */}
-            <Link to='/cart'>
+            <Link to="/cart">
               <button
-                onClick={() => handleOrderPopup()}
-                className="bg-[#ffe11b] dark:border-gray-500 dark:bg-gray-800 transition-all duration-300 text-black dark:text-white py-1 px-4 rounded-full flex items-center gap-3 group"
+                className="bg-[#ffe11b] dark:border-gray-500 dark:bg-gray-800 transition-all duration-300 text-black dark:text-white py-1 px-4 rounded-full flex items-center gap-3 group relative"
               >
                 <span className="group-hover:block hidden transition-all duration-300">
                   Cart
                 </span>
-                <FaCartShopping className="text-xl  dark:text-white text-black  drop-shadow-sm cursor-pointer" />
+                <FaCartShopping className="text-xl dark:text-white text-black drop-shadow-sm cursor-pointer" />
+                {/* Display the total number of items in the cart */}
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
               </button>
             </Link>
             {/* profile icons */}
@@ -255,7 +264,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
           {/* Mapping Menu items */}
           {Menu.map((data) => (
             <li key={data.id} className="flex flex-col items-center text-sm gap-2 ">
-              <a  href={data.link}>
+              <a href={data.link}>
                 <img src={data.img} alt={data.name} className="w-12" />
               </a>
               <a

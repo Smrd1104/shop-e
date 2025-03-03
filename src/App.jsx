@@ -22,6 +22,8 @@ import Table from "./Components/Table/Table";
 import Contact from "./Pages/Contact";
 import Cart from "./Components/Cart/Cart";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import Payment from "./Components/payment/Payment";
+import OrderConfirmation from "./Components/order/OrderConfirmation";
 
 const App = () => {
 
@@ -73,6 +75,9 @@ const App = () => {
         <Route path='/' element={<RouteLayouts />} >
           <Route index element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/table" element={<Table />} />
         </Route>

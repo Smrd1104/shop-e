@@ -1,9 +1,13 @@
 // src/components/Cart.js
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
+  const navigate = useNavigate();
 
   const getTotalPrice = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
@@ -12,7 +16,25 @@ const Cart = () => {
   const getTotalQuantity = () => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
+  const handlePaymentMethodChange = (e) => {
+    setSelectedPaymentMethod(e.target.value);
+  };
 
+  const handleProceedToPayment = () => {
+    if (!selectedPaymentMethod) {
+      alert("Please select a payment method.");
+      return;
+    }
+
+    navigate("/payment", {
+      state: {
+        cart,
+        totalPrice: getTotalPrice(),
+        totalQuantity: getTotalQuantity(),
+        paymentMethod: selectedPaymentMethod,
+      },
+    });
+  };
   return (
     <div className="cart container mx-auto p-6 ">
       <h2 className="text-center py-10 text-3xl font-semibold">Cart</h2>
@@ -82,22 +104,22 @@ const Cart = () => {
               <h4 className="text-xl font-semibold mb-2">Payment Methods</h4>
               <div className="flex flex-col space-y-2">
                 <label className="flex items-center">
-                  <input type="radio" name="payment" value="cash" className="mr-2" />
-                  Cash
+                  <input type="radio" name="payment" value="razorpay" onChange={handlePaymentMethodChange} className="mr-2" />
+                 Razorpay
                 </label>
-                <label className="flex items-center">
-                  <input type="radio" name="payment" value="wallet" className="mr-2" />
+                {/* <label className="flex items-center">
+                  <input type="radio" name="payment" value="wallet" onChange={handlePaymentMethodChange} className="mr-2" />
                   Wallet
                 </label>
                 <label className="flex items-center">
-                  <input type="radio" name="payment" value="upi" className="mr-2" />
+                  <input type="radio" name="payment" value="upi" onChange={handlePaymentMethodChange} className="mr-2" />
                   UPI
-                </label>
+                </label> */}
               </div>
             </div>
 
             <div className="flex justify-center mt-8">
-              <button className="bg-blue-500 text-white py-2 px-4 rounded">Proceed to Payment</button>
+              <button onClick={handleProceedToPayment} className="bg-blue-500 text-white py-2 px-4 rounded">Proceed to Payment</button>
             </div>
           </div>
         </>
