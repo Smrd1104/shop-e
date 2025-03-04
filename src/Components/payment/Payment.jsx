@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext"; // Import CartContext
 
 const Payment = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { cart, totalPrice, totalQuantity, paymentMethod } = location.state || {};
   const [razorpayLoaded, setRazorpayLoaded] = useState(false);
+  const { clearCart } = useContext(CartContext); // Use CartContext to clear the cart
 
   // Load Razorpay Script Dynamically
   useEffect(() => {
@@ -36,6 +38,7 @@ const Payment = () => {
       description: "Order Payment",
       image: "/logo.png", // Optional logo
       handler: (response) => {
+        clearCart(); // Clear the cart after successful payment
         navigate("/order-confirmation", {
           state: {
             cart,
