@@ -48,6 +48,11 @@ const Payment = () => {
             paymentId: response.razorpay_payment_id,
           },
         });
+
+        // Redirect to home page after 10 seconds
+        setTimeout(() => {
+          navigate("/"); // Redirect to home page
+        }, 10000); // 5000 milliseconds = 5 seconds
       },
       prefill: {
         email: "test@example.com",
