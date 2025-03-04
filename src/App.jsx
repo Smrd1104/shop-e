@@ -24,6 +24,7 @@ import Cart from "./Components/Cart/Cart";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Payment from "./Components/payment/Payment";
 import OrderConfirmation from "./Components/order/OrderConfirmation";
+import CartPage from "./Components/Cart/CartPage";
 
 const App = () => {
 
@@ -59,30 +60,30 @@ const App = () => {
   if (loading) {
     return (
       <div className=" flex items-center justify-center min-h-screen">
-        <Loader/>
+        <Loader />
       </div>
     );
   }
   return (
     <div className="">
-     
+
       <ScrollToTop />
-      
+
       <Routes>
-    
+
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path='/' element={<RouteLayouts />} >
           <Route index element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/order-confirmation" element={<OrderConfirmation />} />
+          <Route path="/cart-page" element={<CartPage />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/table" element={<Table />} />
         </Route>
       </Routes>
-      
+
     </div>
   );
 };
