@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { MdDelete } from "react-icons/md";
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(CartContext);
@@ -57,7 +58,7 @@ const Cart = () => {
                 {cart.map((item) => (
                   <tr key={item.id} className="border-t ">
                     <td className="py-2 flex lg:flex-row lg:justify-start justify-center flex-col">
-                      <img src={item.img} alt={item.title} className="w-12 h-12 mr-4" />
+                      <img src={item.img} alt={item.title} className="md:w-20 w-12 h-12 md:h-20 mr-4" />
                       <div>
                         <h3 className="font-medium">{item.title}</h3>
                         <p className="text-sm text-gray-600">{item.color}</p>
@@ -78,9 +79,15 @@ const Cart = () => {
                     <td className="py-2 text-center">
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="bg-red-500 text-sm text-white py-1 px-1 rounded"
+                        className="text-sm text-white py-1 px-1 rounded group relative"
                       >
-                        Remove
+                        {/* Delete Icon */}
+                        <MdDelete className="text-[1.5rem] text-red-500 hover:text-red-700 transition-colors duration-200" />
+
+                        {/* Hover Text */}
+                        <span className="absolute top-1 -right-14  bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                          Remove
+                        </span>
                       </button>
                     </td>
                   </tr>
@@ -105,7 +112,7 @@ const Cart = () => {
               <div className="flex flex-col space-y-2">
                 <label className="flex items-center">
                   <input type="radio" name="payment" value="razorpay" onChange={handlePaymentMethodChange} className="mr-2" />
-                 Razorpay
+                  Razorpay
                 </label>
                 {/* <label className="flex items-center">
                   <input type="radio" name="payment" value="wallet" onChange={handlePaymentMethodChange} className="mr-2" />
