@@ -37,7 +37,7 @@ const Cart = () => {
     });
   };
   return (
-    <div className="cart container mx-auto p-6 ">
+    <div className="cart container mx-auto p-6  ">
       <h2 className="text-center py-10 text-3xl font-semibold">Cart</h2>
       {cart.length === 0 ? (
         <p className="text-center text-lg">No items in cart.</p>
@@ -67,11 +67,11 @@ const Cart = () => {
                     </td>
                     <td className="py-2 text-center">
                       <input
-                        type="number"
+                        type="text"
                         value={item.quantity}
                         min="1"
                         onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                        className="w-16 p-1 border rounded dark:bg-gray-900"
+                        className="w-10 p-1 border rounded dark:bg-gray-900"
                       />
                     </td>
                     <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
