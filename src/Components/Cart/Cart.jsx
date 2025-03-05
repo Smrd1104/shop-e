@@ -43,26 +43,26 @@ const Cart = () => {
         <p className="text-center text-lg">No items in cart.</p>
       ) : (
         <>
-          <div className="overflow-x-auto ">
+          <div className="overflow-x-hidden ">
             <table className="min-w-full bg-white border-collapse dark:text-white dark:bg-gray-900">
               <thead>
-                <tr className="border-b">
-                  <th className="py-2 text-left">Product</th>
-                  <th className="py-2 text-center">Quantity</th>
-                  <th className="py-2 text-right">Unit Price</th>
-                  <th className="py-2 text-right">Total Price</th>
-                  <th className="py-2 text-center">Actions</th>
+                <tr className="border-b ">
+                  <th className="py-2 text-left  md:text-lg text-xs">Product</th>
+                  <th className="py-2 text-center md:text-lg text-xs">Quantity</th>
+                  <th className="py-2 text-right  md:text-lg text-xs">Unit Price</th>
+                  <th className="py-2 text-right  md:text-lg text-xs">Total Price</th>
+                  <th className="py-2 text-center  md:text-lg text-xs">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {cart.map((item) => (
-                  <tr key={item.id} className="border-t ">
+                  <tr key={item.id} className="border-t">
                     <td className="py-2 flex lg:flex-row lg:justify-start justify-center flex-col">
                       <img src={item.img} alt={item.title} className="md:w-20 w-12 h-12 md:h-20 mr-4" />
                       <div>
-                        <h3 className="font-medium">{item.title}</h3>
-                        <p className="text-sm text-gray-600">{item.color}</p>
-                        <p className="text-sm text-gray-600">Rating: {item.rating}</p>
+                        <h3 className="font-medium text-sm">{item.title}</h3>
+                        <p className="text-xs text-gray-600">{item.color}</p>
+                        <p className="text-xs text-gray-600">Rating: {item.rating}</p>
                       </div>
                     </td>
                     <td className="py-2 text-center">
@@ -71,7 +71,7 @@ const Cart = () => {
                         value={item.quantity}
                         min="1"
                         onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                        className="w-10 p-1 border rounded dark:bg-gray-900"
+                        className="md:w-16 w-12 p-1 border text-center rounded dark:bg-gray-900"
                       />
                     </td>
                     <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
