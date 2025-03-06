@@ -9,87 +9,119 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useCart } from '../../Context/CartContext'; // Import the useCart hook
+import { Link } from "react-router-dom";
 
 const ProductsData = [
   {
     id: 1,
     img: img1,
     title: "Casual Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "Blue",
+    seller: "Fashion Hub",
   },
   {
     id: 2,
     img: img2,
     title: "T-shirt ",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "Black",
+    seller: "T-Shirt World",
   },
   {
     id: 3,
     img: img3,
     title: "Mens Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "White",
+    seller: "Men's Fashion",
   },
   {
     id: 4,
     img: img1,
     title: "Casual Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "Blue",
+    seller: "Fashion Hub",
   },
   {
     id: 5,
     img: img2,
     title: "T-shirt ",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "Black",
+    seller: "T-Shirt World",
   },
   {
     id: 6,
     img: img3,
     title: "Mens Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "White",
+    seller: "Men's Fashion",
   },
   {
     id: 7,
     img: img1,
     title: "Casual Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "Blue",
+    seller: "Fashion Hub",
   },
   {
     id: 8,
     img: img2,
     title: "T-shirt ",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "Black",
+    seller: "T-Shirt World",
   },
   {
     id: 9,
     img: img3,
     title: "Mens Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
+    description: "99% offer !!!",
+    originalPrice: 100,
+    discountPrice: 1,
+    discount: 99,
+    color: "White",
+    seller: "Men's Fashion",
   },
-  {
-    id: 10,
-    img: img1,
-    title: "Casual Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
-  },
-  {
-    id: 11,
-    img: img2,
-    title: "T-shirt ",
-    description: "The products of mens wear is comfortable to wear in summer",
-  },
-  {
-    id: 12,
-    img: img3,
-    title: "Mens Wear",
-    description: "The products of mens wear is comfortable to wear in summer",
-  },
+  // Add more products as needed
 ];
 
 const TopProducts = () => {
   const swiperRef = useRef(null);
   const [isPrevActive, setIsPrevActive] = useState(false);
-  const [isNextActive, setIsNextActive] = useState(true); // Initially, next is active
+  const [isNextActive, setIsNextActive] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const { addItemToCart } = useCart(); // Use the useCart hook to access addItemToCart function
+
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.params.navigation.prevEl = "#top-prev";
@@ -98,39 +130,48 @@ const TopProducts = () => {
       swiperRef.current.swiper.navigation.update();
     }
   }, []);
+
+  const handleOrderNow = (product) => {
+    addItemToCart({
+      id: product.id,
+      name: product.title,
+      image: product.img,
+      originalPrice: product.originalPrice,
+      discountPrice: product.discountPrice,
+      discount: product.discount,
+      color: product.color,
+      seller: product.seller,
+      quantity: 1,
+    });
+  };
+
   return (
-    <div className="shadow-lg mx-2 rounded  bg-white  dark:bg-gray-900 py-5 mt-5">
+    <div className="shadow-lg mx-2 rounded bg-white dark:bg-gray-900 py-5 mt-5">
       <div className="">
         {/* header section */}
-        <div className=" text-left mb-10  container overflow-hidden mx-auto">
-          <p className="text-sm text-primary">
-            Top Rated Products for you
-          </p>
-          <h1 className="text-3xl font-bold">
-            Best Products
-          </h1>
-          <p className="text-xs text-gray-400">
-            Best products to sell tjis website
-          </p>
+        <div className="text-left mb-10 container overflow-hidden mx-auto">
+          <p className="text-sm text-primary">Top Rated Products for you</p>
+          <h1 className="text-3xl font-bold">Best Products</h1>
+          <p className="text-xs text-gray-400">Best products to sell on this website</p>
         </div>
       </div>
-      <div className="relative container mx-auto"
+      <div
+        className="relative container mx-auto"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-
         {/* Custom Navigation Buttons */}
         <button
-          className="lg:block hidden absolute md:left-8 left-0 top-1/2 -translate-y-1/2   z-10  shadow-3xl   bg-white dark:bg-gray-900  md:py-8 py-2 px-2 rounded"
+          className="lg:block hidden absolute md:left-8 left-0 top-1/2 -translate-y-1/2 z-10 shadow-3xl bg-white dark:bg-gray-900 md:py-8 py-2 px-2 rounded"
           id="top-prev"
         >
-          <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700 dark:text-white" : " hidden"}`} />
+          <IoIosArrowBack className={`${isHovered && isPrevActive ? "text-[1.5rem] text-gray-700 dark:text-white" : "hidden"}`} />
         </button>
         <button
-          className="lg:block hidden absolute md:right-8 right-0 top-1/2 z-10 -translate-y-1/2 shadow-3xl bg-white dark:bg-gray-900   md:py-8 py-2 px-2 rounded"
+          className="lg:block hidden absolute md:right-8 right-0 top-1/2 z-10 -translate-y-1/2 shadow-3xl bg-white dark:bg-gray-900 md:py-8 py-2 px-2 rounded"
           id="top-next"
         >
-          <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700 dark:text-white" : " hidden"}`} />
+          <IoIosArrowForward className={`${isHovered && isNextActive ? "text-[1.5rem] text-gray-700 dark:text-white" : "hidden"}`} />
         </button>
         <Swiper
           ref={swiperRef}
@@ -146,7 +187,6 @@ const TopProducts = () => {
             nextEl: "#top-next",
             prevEl: "#top-prev",
           }}
-          // autoplay={{ delay: 3000 }}
           onSlideChange={(swiper) => {
             setIsPrevActive(swiper.activeIndex > 0);
             setIsNextActive(swiper.activeIndex < swiper.slides.length - 7);
@@ -160,25 +200,23 @@ const TopProducts = () => {
               </span>`;
             },
           }}
-
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false, // Keeps autoplay running after interaction
-            pauseOnMouseEnter: true, // Pauses when the user hovers over a product
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
-          className="py-12 "
+          className="py-12"
         >
-          {/* body section  */}
+          {/* body section */}
           <div className="flex flex-1 place-items-center">
             {ProductsData.map((data) => (
               <SwiperSlide key={data.id}>
                 <div
-                  // data-aos='zoom-in'
                   key={data?.id}
                   className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 pt-10 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group md:max-w-[180px] w-full"
                 >
                   {/* image section */}
-                  <div className="h-[50px] ">
+                  <div className="h-[50px]">
                     <img
                       src={data?.img}
                       alt=""
@@ -198,9 +236,14 @@ const TopProducts = () => {
                     <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
                       {data?.description}
                     </p>
-                    <button
-                      className="bg-gradient-to-r from-primary to to-secondary hover:scale-105 duration-300 text-black py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-white"
-                    >Order Now</button>
+                     <Link to="/cart-page">
+                      <button
+                        onClick={() => handleOrderNow(data)}
+                        className="bg-gradient-to-r from-primary to to-secondary hover:scale-105 duration-300 text-black py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-white"
+                      >
+                        Add to cart
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </SwiperSlide>

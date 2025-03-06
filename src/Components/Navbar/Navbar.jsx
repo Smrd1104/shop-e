@@ -165,9 +165,9 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
 
   console.log('isAuthenticated: ', isAuthenticated);
 
-  const { cart } = useContext(CartContext); // Access the cart data from CartContext
+  const { cartItems } = useContext(CartContext); // Access the cart data from CartContext
 
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <div className="shadow-sm dark:bg-gray-900 dark:text-white duration-200 relative z-40">
@@ -195,7 +195,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
               <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-black dark:group-hover:text-white    absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
             {/* order button */}
-            <Link to="/cart">
+            <Link to="/cart-page">
               <button
                 className="bg-[#ffe11b] dark:border-gray-500 dark:bg-gray-800 transition-all duration-300 text-black dark:text-white py-1 px-4 rounded-full flex items-center gap-3 group relative"
               >
