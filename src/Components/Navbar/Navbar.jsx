@@ -170,7 +170,7 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <div className="shadow-sm dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="shadow-sm  dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="fixed z-[9999] top-0 left-0 right-0 bg-gradient-to-r from-[#FCB714] via-[#ED8023] via-[#00A8CE] to-[#0F56A6]/50 backdrop-blur-md ">
         <div className="container flex justify-between items-center">
@@ -259,8 +259,8 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
         </div>
       </div>
       {/* lower Navbar */}
-      <div className=" mt-14   bg-white dark:bg-gray-900 mx-2 rounded  shadow-lg dark:text-white ">
-        <ul className="sm:flex  hidden items-center justify-between  container mx-auto ">
+      <div className="mt-14 bg-white dark:bg-gray-900  dark:text-white ">
+        <ul className="sm:flex  hidden items-center   justify-between  container mx-auto ">
           {/* Mapping Menu items */}
           {Menu.map((data) => (
             <li key={data.id} className="flex flex-col items-center text-sm gap-2 ">

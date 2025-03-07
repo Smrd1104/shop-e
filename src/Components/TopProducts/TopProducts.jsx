@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import img1 from "../../assets/shirt/shirt-1 (1).png";
 import img2 from "../../assets/vkc/t-shirt (8).png";
 import img3 from "../../assets/shirt/shirt-1 (5).png";
-import { FaStar } from "react-icons/fa6";
+import { FaCartPlus, FaStar } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -23,7 +23,7 @@ const ProductsData = [
     discount: 99,
     color: "Blue",
     seller: "Fashion Hub",
-    link:"/cart-page",
+    link: "/cart-page",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const ProductsData = [
     discount: 99,
     color: "Black",
     seller: "T-Shirt World",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -48,7 +48,7 @@ const ProductsData = [
     discount: 99,
     color: "White",
     seller: "Men's Fashion",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -61,7 +61,7 @@ const ProductsData = [
     discount: 99,
     color: "Blue",
     seller: "Fashion Hub",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -74,7 +74,7 @@ const ProductsData = [
     discount: 99,
     color: "Black",
     seller: "T-Shirt World",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -87,7 +87,7 @@ const ProductsData = [
     discount: 99,
     color: "White",
     seller: "Men's Fashion",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -100,7 +100,7 @@ const ProductsData = [
     discount: 99,
     color: "Blue",
     seller: "Fashion Hub",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -113,7 +113,7 @@ const ProductsData = [
     discount: 99,
     color: "Black",
     seller: "T-Shirt World",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   {
@@ -126,7 +126,7 @@ const ProductsData = [
     discount: 99,
     color: "White",
     seller: "Men's Fashion",
-    link:"/cart-page",
+    link: "/cart-page",
 
   },
   // Add more products as needed
@@ -198,7 +198,7 @@ const TopProducts = () => {
           breakpoints={{
             380: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
-            1024: { slidesPerView: 7 },
+            1024: { slidesPerView: 5 },
           }}
           navigation={{
             nextEl: "#top-next",
@@ -206,7 +206,7 @@ const TopProducts = () => {
           }}
           onSlideChange={(swiper) => {
             setIsPrevActive(swiper.activeIndex > 0);
-            setIsNextActive(swiper.activeIndex < swiper.slides.length - 7);
+            setIsNextActive(swiper.activeIndex < swiper.slides.length - 5);
           }}
           pagination={{
             dynamicBullets: true,
@@ -230,7 +230,7 @@ const TopProducts = () => {
               <SwiperSlide key={data.id}>
                 <div
                   key={data?.id}
-                  className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 pt-10 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group md:max-w-[180px] w-full"
+                  className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 pt-10 dark:hover:bg-primary hover:text-white relative md:shadow-xl shadow-xl duration-300 group md:max-w-[250px] w-full"
                 >
                   {/* image section */}
                   <div className="h-[50px]">
@@ -253,12 +253,14 @@ const TopProducts = () => {
                     <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
                       {data?.description}
                     </p>
-                     <Link to={data?.link}>
+                    <Link to={data?.link}>
                       <button
                         onClick={() => handleOrderNow(data)}
-                        className="bg-gradient-to-r from-primary to to-secondary hover:scale-105 duration-300 text-black py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-white"
+                        className="mt-2 py-1 md:px-7 px-12 hover:scale-105 duration-300 bg-gradient-to-r from-primary to to-secondary text-white rounded-md"
                       >
-                        Add to cart
+                        <div className="flex flex-row items-center gap-2">
+                          <FaCartPlus /> <span className="lg:block hidden">Add to cart</span>
+                        </div>
                       </button>
                     </Link>
                   </div>
