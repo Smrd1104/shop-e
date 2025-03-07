@@ -7,11 +7,12 @@ import "swiper/css/pagination";
 import { FaStar } from "react-icons/fa6";
 import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
-import image1 from "../../assets/vkc/womens-hills (2).png";
+import image1 from "../../assets/vkc/sport.jpeg";
 import image2 from "../../assets/vkc/shoe.jpg";
 import image3 from "../../assets/vkc/boots.jpg";
 import image4 from "../../assets/vkc/formals.jpg";
 import image5 from "../../assets/vkc/casuals.jpg";
+import image6 from "../../assets/vkc/kids.jpeg"
 import { IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaCartPlus } from "react-icons/fa";
@@ -20,13 +21,13 @@ import { useState } from "react";
 const ProductsData = [
   {
     id: 1,
-    img: image1,
-    title: "Fashion Wear",
+    img: image6,
+    title: "Kids Wear",
     rating: 5.0,
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 2,
@@ -36,7 +37,7 @@ const ProductsData = [
     color: "Red",
     price: 1,
     aosDelay: "200",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 3,
@@ -46,7 +47,7 @@ const ProductsData = [
     color: "Brown",
     price: 1,
     aosDelay: "400",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 4,
@@ -56,7 +57,7 @@ const ProductsData = [
     color: "Yellow",
     price: 1,
     aosDelay: "600",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 5,
@@ -66,47 +67,47 @@ const ProductsData = [
     color: "Pink",
     price: 1,
     aosDelay: "800",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 6,
     img: image1,
-    title: "Fashion Wear",
+    title: "Sports Wear",
     rating: 5.0,
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 7,
     img: image2,
-    title: "Fashion Wear",
+    title: "Sports Wear",
     rating: 5.0,
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 8,
     img: image3,
-    title: "Fashion Wear",
+    title: "Sports Wear",
     rating: 5.0,
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 9,
     img: image4,
-    title: "Fashion Wear",
+    title: "Sports Wear",
     rating: 5.0,
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 10,
@@ -116,7 +117,7 @@ const ProductsData = [
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
   {
     id: 11,
@@ -126,7 +127,7 @@ const ProductsData = [
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   }, {
     id: 12,
     img: image2,
@@ -135,7 +136,7 @@ const ProductsData = [
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   }, {
     id: 13,
     img: image3,
@@ -144,7 +145,7 @@ const ProductsData = [
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   }, {
     id: 14,
     img: image4,
@@ -153,7 +154,7 @@ const ProductsData = [
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   }, {
     id: 15,
     img: image5,
@@ -162,7 +163,7 @@ const ProductsData = [
     color: "Diamond Blue",
     price: 1,
     aosDelay: "0",
-    link: "/cart",
+    link: "/cart-page",
   },
 ];
 
