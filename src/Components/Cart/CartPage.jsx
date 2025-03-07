@@ -139,7 +139,7 @@ const CartPage = () => {
                                     </div>
                                 )}
                             </div>
-                            <div className="h-96 overflow-y-auto overflow-x-hidden  custom-scrollbar">
+                            <div className="md:h-96 md:overflow-y-auto overflow-x-hidden  custom-scrollbar">
                                 {cartItems.map((item) => (
                                     <div key={item.id} className="mt-5  dark:border dark:bg-gray-900 bg-white shadow-lg rounded p-5 flex md:flex-row flex-col md:items-start">
                                         <img src={item.image} alt={item.name} className="md:w-32 w-28 md:h-auto h-24 bg-white" />

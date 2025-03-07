@@ -23,6 +23,7 @@ const ProductsData = [
     discount: 99,
     color: "Blue",
     seller: "Fashion Hub",
+    link:"/cart-page",
   },
   {
     id: 2,
@@ -34,6 +35,8 @@ const ProductsData = [
     discount: 99,
     color: "Black",
     seller: "T-Shirt World",
+    link:"/cart-page",
+
   },
   {
     id: 3,
@@ -45,6 +48,8 @@ const ProductsData = [
     discount: 99,
     color: "White",
     seller: "Men's Fashion",
+    link:"/cart-page",
+
   },
   {
     id: 4,
@@ -56,6 +61,8 @@ const ProductsData = [
     discount: 99,
     color: "Blue",
     seller: "Fashion Hub",
+    link:"/cart-page",
+
   },
   {
     id: 5,
@@ -67,6 +74,8 @@ const ProductsData = [
     discount: 99,
     color: "Black",
     seller: "T-Shirt World",
+    link:"/cart-page",
+
   },
   {
     id: 6,
@@ -78,6 +87,8 @@ const ProductsData = [
     discount: 99,
     color: "White",
     seller: "Men's Fashion",
+    link:"/cart-page",
+
   },
   {
     id: 7,
@@ -89,6 +100,8 @@ const ProductsData = [
     discount: 99,
     color: "Blue",
     seller: "Fashion Hub",
+    link:"/cart-page",
+
   },
   {
     id: 8,
@@ -100,6 +113,8 @@ const ProductsData = [
     discount: 99,
     color: "Black",
     seller: "T-Shirt World",
+    link:"/cart-page",
+
   },
   {
     id: 9,
@@ -111,6 +126,8 @@ const ProductsData = [
     discount: 99,
     color: "White",
     seller: "Men's Fashion",
+    link:"/cart-page",
+
   },
   // Add more products as needed
 ];
@@ -236,7 +253,7 @@ const TopProducts = () => {
                     <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
                       {data?.description}
                     </p>
-                     <Link to="/cart-page">
+                     <Link to={data?.link}>
                       <button
                         onClick={() => handleOrderNow(data)}
                         className="bg-gradient-to-r from-primary to to-secondary hover:scale-105 duration-300 text-black py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-white"
