@@ -12,7 +12,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useCart } from '../../Context/CartContext'; // Import the useCart hook
 import { Link } from "react-router-dom";
 
-const ProductsData = [
+const TopProductsData = [
   {
     id: 1,
     img: img1,
@@ -226,7 +226,7 @@ const TopProducts = () => {
         >
           {/* body section */}
           <div className="flex flex-1 place-items-center">
-            {ProductsData.map((data) => (
+            {TopProductsData.map((data) => (
               <SwiperSlide key={data.id}>
                 <div
                   key={data?.id}

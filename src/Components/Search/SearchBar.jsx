@@ -9,6 +9,10 @@ import image4 from "../../assets/vkc/formals.jpg";
 import image5 from "../../assets/vkc/casuals.jpg";
 import image6 from "../../assets/vkc/kids.jpeg";
 
+import img1 from "../../assets/shirt/shirt-1 (1).png";
+import img2 from "../../assets/vkc/t-shirt (8).png";
+import img3 from "../../assets/shirt/shirt-1 (5).png";
+
 const SearchBar = () => {
     const ProductsData = [
         {
@@ -153,6 +157,136 @@ const SearchBar = () => {
         },
         // Add more products as needed
     ];
+
+    const TopProductsData = [
+        {
+            id: 1,
+            img: img1,
+            name: "Casual Wear",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "Blue",
+            seller: "Fashion Hub",
+            link: "/cart-page",
+            rating: 5.0,
+        },
+        {
+            id: 2,
+            img: img2,
+            name: "T-shirt ",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "Black",
+            seller: "T-Shirt World",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 3,
+            img: img3,
+            name: "Mens Wear",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "White",
+            seller: "Men's Fashion",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 4,
+            img: img1,
+            name: "Casual Wear",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "Blue",
+            seller: "Fashion Hub",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 5,
+            img: img2,
+            name: "T-shirt ",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "Black",
+            seller: "T-Shirt World",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 6,
+            img: img3,
+            name: "Mens Wear",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "White",
+            seller: "Men's Fashion",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 7,
+            img: img1,
+            name: "Casual Wear",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "Blue",
+            seller: "Fashion Hub",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 8,
+            img: img2,
+            name: "T-shirt ",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "Black",
+            seller: "T-Shirt World",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        {
+            id: 9,
+            img: img3,
+            name: "Mens Wear",
+            description: "99% offer !!!",
+            originalPrice: 100,
+            discountPrice: 1,
+            discount: 99,
+            color: "White",
+            seller: "Men's Fashion",
+            link: "/cart-page",
+            rating: 5.0,
+
+        },
+        // Add more products as needed
+    ];
+
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
@@ -164,7 +298,7 @@ const SearchBar = () => {
 
     // Combine products when component mounts
     useEffect(() => {
-        setAllProducts([...ProductsData]);
+        setAllProducts([...ProductsData, ...TopProductsData]);
     }, []);
 
     // Focus management for mobile search
@@ -214,6 +348,7 @@ const SearchBar = () => {
             product.name?.toLowerCase().includes(query.toLowerCase()) ||
             product.color?.toLowerCase().includes(query.toLowerCase()) ||
             product.seller?.toLowerCase().includes(query.toLowerCase())
+
         );
         setSearchResults(results);
         setSelectedResultIndex(-1);
