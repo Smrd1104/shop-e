@@ -268,7 +268,7 @@ const SearchBar = () => {
                         className="w-full bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                         onFocus={() => searchQuery && setShowResults(true)}
                     />
-                    <IoMdSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl" />
+                    <IoMdSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500  text-xl" />
                     {searchQuery && (
                         <button
                             onClick={clearSearch}
@@ -337,10 +337,10 @@ const SearchBar = () => {
             {/* Mobile Search Toggle Button */}
             <button
                 onClick={toggleMobileSearch}
-                className="sm:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                className="sm:hidden bg-[#ffe11b] px-4 py-1 mt-0.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
                 aria-label="Search"
             >
-                <IoMdSearch className="text-xl text-gray-700 dark:text-white" />
+                <IoMdSearch className="text-[1.3rem] text-center font-bold text-black dark:text-white" />
             </button>
 
             {/* Mobile Search Overlay */}
