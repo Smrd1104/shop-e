@@ -12,6 +12,7 @@ import img4 from "../../assets/navbar/laptop.png"
 import img5 from "../../assets/navbar/kilos.png"
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext"; // Adjust the import path as needed
+import SearchBar from "../Search/SearchBar";
 
 
 const Menu = [
@@ -185,15 +186,16 @@ const Navbar = ({ handleLogout, handleOrderPopup }) => {
             </a>
           </div>
           {/* searchbar */}
-          <div className="flex justify-between items-center gap-4">
-            <div className="relative hidden sm:block group ">
+          <div className="flex justify-between items-center md:gap-6 gap-4">
+            {/* <div className="relative hidden sm:block group ">
               <input
                 type="text"
                 placeholder="Search"
                 className="md:w-[150px]  group-hover:w-[800px]  group-hover:bg-gray-100 dark:group-hover:bg-gray-800  transition-all duration-700 rounded-full  border-gray-400 px-2 py-1 focus:outline-none focus:border-1  focus:border-[] dark:border-[#ffe11b] dark:bg-gray-800"
               />
               <IoMdSearch className="text-black text-2xl dark:text-white group-hover:text-black dark:group-hover:text-white    absolute top-1/2 -translate-y-1/2 right-3" />
-            </div>
+            </div> */}
+            <SearchBar />
             {/* order button */}
             <Link to="/cart-page">
               <button

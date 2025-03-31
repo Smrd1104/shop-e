@@ -13,7 +13,7 @@ import image3 from "../../assets/vkc/boots.jpg";
 import image4 from "../../assets/vkc/formals.jpg";
 import image5 from "../../assets/vkc/casuals.jpg";
 import image6 from "../../assets/vkc/kids.jpeg"
-import { IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { FaCartPlus } from "react-icons/fa";
 import { useState } from "react";
@@ -312,7 +312,8 @@ const ProductsData = [
   // Add more products as needed
 ];
 
-const Products = () => {
+const Products = ({ filteredProducts }) => {
+  const productsToDisplay = filteredProducts || ProductsData;
   const { addItemToCart } = useCart(); // Use the useCart hook to access addItemToCart function
   const swiperRef = useRef(null);
   const [isPrevActive, setIsPrevActive] = useState(false);

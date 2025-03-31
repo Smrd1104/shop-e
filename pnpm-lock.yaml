@@ -53,6 +53,9 @@ importers:
       keyframe-parser:
         specifier: ^1.0.1
         version: 1.0.1
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       mysql:
         specifier: ^2.18.1
         version: 2.18.1
