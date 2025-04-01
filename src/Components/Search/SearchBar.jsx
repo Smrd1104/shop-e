@@ -352,7 +352,7 @@ const SearchBar = () => {
         );
         setSearchResults(results);
         setSelectedResultIndex(-1);
-    }, 300);
+    }, 1500);
 
     const handleSearch = (query) => {
         setSearchQuery(query);
@@ -383,7 +383,7 @@ const SearchBar = () => {
         if (!isMobileSearchOpen) {
             setTimeout(() => {
                 searchInputRef.current?.focus();
-            }, 100);
+            }, 1000);
         } else {
             clearSearch();
         }
