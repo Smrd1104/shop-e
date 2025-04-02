@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
-import Products from "./Components/Products/Products";
+import Products from "./Pages/Products";
 import AOS from "aos";
 import 'aos/dist/aos.css'
 import TopProducts from "./Components/TopProducts/TopProducts";
@@ -76,6 +76,7 @@ const App = () => {
         <Route path='/' element={<RouteLayouts />} >
           <Route index element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/cart-page" element={<CartPage />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/order-confirmation" element={<OrderConfirmation />} />
